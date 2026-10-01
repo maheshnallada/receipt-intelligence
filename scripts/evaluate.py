@@ -1,4 +1,4 @@
-"""Write reports/evaluation.md and reports/metrics.json. Works without a GPU."""
+"""Write synthetic CPU checks to reports/local-validation without replacing model results."""
 
 from __future__ import annotations
 
@@ -66,22 +66,7 @@ async def dummy_stage() -> dict:
         pages = PyMuPdfRenderer().render(content, settings.long_edge)
         texts.append("\n".join(page.text_layer for page in pages))
         latencies.append(result.inference_ms)
-    return summarize(golds, preds, texts, latencies, stage="dummy-samples")
-
-
-def pending_vlm_stage(label: str) -> dict:
-    empty = {"precision": None, "recall": None, "f1": None, "exact_match": None}
-    return {
-        "stage": label,
-        "n": 0,
-        "fields": {name: empty for name in ("store_name", "date", "subtotal", "tax", "total", "line_items")},
-        "exact_match_receipt": None,
-        "json_validity": None,
-        "hallucination_before_grounding": None,
-        "hallucination_after_grounding": None,
-        "latency_ms_per_page": {"p50": None, "p95": None},
-        "peak_gpu_memory": "n/a — run on a T4: python scripts/evaluate.py --cord --backend qwen",
-    }
+    return summarize(golds, preds, texts, latencies, stage="synthetic-samples")
 
 
 def main() -> None:
@@ -89,15 +74,15 @@ def main() -> None:
     dummy = asyncio.run(dummy_stage())
     metrics = {
         "note": (
-            "Dummy-backend numbers are measured on committed sample PDFs. "
-            "Zero-shot and fine-tuned CORD rows are pending a T4 run. "
-            "Command: MODEL_BACKEND=qwen python scripts/evaluate.py --cord"
+            "Synthetic CPU backend checks on committed sample PDFs. "
+            "These results validate the extraction pipeline, not VLM accuracy. "
+            "See reports/evaluation.md for the separate real-model evaluation."
         ),
-        "stages": [dummy, pending_vlm_stage("zero-shot"), pending_vlm_stage("fine-tuned")],
-        "hardware": "CPU dummy path on this machine",
+        "stages": [dummy],
+        "hardware": "CPU synthetic test backend",
         "cost_assumption": "AWS g4dn.xlarge T4 on-demand ≈ $0.526/hr",
     }
-    dest = ROOT / "reports"
+    dest = ROOT / "reports" / "local-validation"
     write_reports(metrics, dest)
     maybe_wandb(metrics)
     print(render_markdown(metrics))

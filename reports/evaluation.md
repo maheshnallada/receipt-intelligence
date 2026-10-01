@@ -40,8 +40,8 @@ CORD does not label `store_name` or `date`; their F1 remains 0.000 and the exact
 ## Uploaded PDF inference smoke test (Kaggle)
 
 Saved evidence: [final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb),
-Cells 59-61. This is a real-model run, separate from both the frozen CORD
-comparison above and the dummy API results below.
+Cells 59-61. This is a real-model run, separate from the frozen CORD
+comparison above.
 
 | Observation | Saved result |
 |---|---|
@@ -90,7 +90,7 @@ same adapter revision above, downloaded to a revision-pinned local snapshot.
 | Observation | Saved result |
 |---|---|
 | Input | Bundled synthetic `receipt_ok.pdf`, one page |
-| Backend | `qwen`, not `dummy` |
+| Backend | `qwen` |
 | HTTP status / cache | 200 / MISS (`force_refresh=true`) |
 | Client elapsed time | 25.897 seconds |
 | Reported processing time / queue wait | 25,756.3 ms / 0.0 ms |
@@ -118,7 +118,7 @@ with queue-timeout load shedding; their response bodies were not captured.
 Request 5 completed at 74.24 seconds: the limit applies to queue waiting, not
 total request duration.
 
-The separate user-pasted follow-up is preserved verbatim in
+The separate follow-up run is preserved verbatim in
 [concurrency_completion.txt](concurrency_completion.txt):
 
 | Processing order | Request | HTTP / cache | Queue wait (s) | Processing (s) | Client elapsed (s) |
@@ -144,31 +144,6 @@ responsiveness, 429 overflow, 503 queue timeout, and cancellation; those
 properties were not all directly probed in the GPU captures. Docker, Redis
 integration, scanned-document OCR fallback, and the local UI's real-model path
 remain unvalidated by these runs. CORD metrics and cost estimates are unchanged.
-
-## Dummy Backend
-
-Dummy-backend numbers are measured on committed sample PDFs. Command: `python scripts/evaluate.py`.
-
-## dummy-samples (n=2)
-
-| Field | P | R | F1 | Exact |
-|---|---:|---:|---:|---:|
-| store_name | 1.000 | 1.000 | 1.000 | 1.000 |
-| date | 1.000 | 1.000 | 1.000 | 1.000 |
-| subtotal | 1.000 | 1.000 | 1.000 | 1.000 |
-| tax | 1.000 | 1.000 | 1.000 | 1.000 |
-| total | 1.000 | 1.000 | 1.000 | 1.000 |
-| line_items.name | 1.000 | 1.000 | 1.000 | 1.000 |
-| line_items.qty | 1.000 | 1.000 | 1.000 | 1.000 |
-| line_items.unit_price | 1.000 | 1.000 | 1.000 | 1.000 |
-| line_items.amount | 1.000 | 1.000 | 1.000 | 1.000 |
-
-- Receipt exact match: 1.000
-- JSON validity: 1.000
-- Hallucination before grounding: 0.000
-- Hallucination after grounding: 0.000
-- Latency p50/p95 (ms/page): 12.2 / 24.8
-- Peak GPU memory: n/a
 
 ## Summary
 

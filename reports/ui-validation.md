@@ -10,7 +10,7 @@ and do not establish validation of this hosted deployment.
 ## Scope
 
 Six hash-routed views: story, model, evaluation, feasibility, architecture,
-and extraction. Browser checks used the local FastAPI dummy backend with an
+and extraction. Browser checks used the local FastAPI synthetic test backend with an
 in-memory cache, not Qwen inference. No new GPU benchmark or Docker validation
 was performed.
 
@@ -24,7 +24,7 @@ was performed.
 - Cost calculator: default estimates $3.40/$5.81; a $1 hourly rate changes them
   to $6.46/$11.04 for zero-shot/fine-tuned respectively.
 - Sample PDF extraction, rendered preview, field verification, and approval:
-  passed against the dummy API. Approved total was 13.50.
+  passed against the synthetic test API. Approved total was 13.50.
 - Navigation away from the receipt desk and back preserves the receipt.
 - Mobile menu opens, navigates, and closes.
 - Invalid PDF content produces the visible corrupt/unreadable error.

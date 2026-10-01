@@ -1,4 +1,4 @@
-"""CPU dummy backend: schema-valid fixtures from the page text layer."""
+"""Synthetic CPU test backend: schema-valid fixtures from the page text layer."""
 
 from __future__ import annotations
 

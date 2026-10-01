@@ -45,7 +45,7 @@ quote before using the rate commercially.
 
 The conclusion is: **T4 model execution, the same-test-set comparison, and a
 real-model FastAPI smoke test inside Kaggle have saved evidence. The local UI
-was tested in dummy mode. Follow-up concurrency timings support serialized
+was tested with the synthetic backend. Follow-up concurrency timings support serialized
 processing and timeout-based load shedding; production deployment and
 production quality/latency remain unvalidated.** Fine-tuning
 provided a modest gain on totals and receipt exact match, with no line-item
@@ -107,7 +107,7 @@ The [separate completion capture](concurrency_completion.txt) has five HTTP
 200 cache misses. Processing order is 2, 1, 5, 4, 3; waits are 0.00, 25.37,
 50.41, 75.62, and 100.61 seconds. Each request processes for about 25 seconds,
 and the last completes at 125.99 seconds. A 120-second queue setting was
-suggested but is not verified: this user-pasted run has no matching saved
+suggested but is not verified: this recorded run has no matching saved
 settings/version metadata. The 60-second settings belong to the earlier run.
 
 The corrected pipeline runs in a thread while holding the async GPU slot.

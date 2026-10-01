@@ -7,7 +7,7 @@ If the model cannot be repaired into the schema, the API still returns nulls
 and verification flags — never invalid JSON, never a guessed value.
 
 Hardware target: free Colab/Kaggle T4 (16 GB). This checkout runs end-to-end
-in `MODEL_BACKEND=dummy` without a GPU.
+in `MODEL_BACKEND=dummy` without a GPU, using a synthetic test backend.
 
 ## Live frontend and experiment report
 
@@ -22,7 +22,7 @@ One bounded context: receipt extraction. Four layers, one way:
 |---|---|---|
 | `app/domain` | stdlib only | `Receipt` aggregate, grounding, sanity, merge, ports |
 | `app/application` | domain | `ExtractReceipt` use case |
-| `app/infrastructure` | domain + drivers | PyMuPDF, Qwen/dummy, Redis/LRU, GPU slot, Logfire |
+| `app/infrastructure` | domain + drivers | PyMuPDF, Qwen and synthetic test backend, Redis/LRU, GPU slot, Logfire |
 | `app/interfaces` | application + domain | FastAPI routes and Pydantic HTTP schema |
 
 `app/main.py` is the composition root. Routes do not ground, merge, or cache.
@@ -88,7 +88,7 @@ cd ui && npm install && npm run dev
 
 Open http://localhost:5173. Session state is in the browser only.
 
-Docker (dummy API + nginx UI + Redis):
+Docker (synthetic test API + nginx UI + Redis):
 
 ```bash
 docker compose up --build
@@ -124,7 +124,7 @@ returned seven line items and a predicted total of 845.00. The notebook's
 schema validation passed after one repair generation; elapsed page processing
 time was 118.733 seconds, including the repair.
 
-This is real model execution, not dummy output. It is a qualitative smoke test,
+This is real model execution. It is a qualitative smoke test,
 not a labeled accuracy evaluation: the date remains `04-12-2018` rather than
 ISO format, the store field includes the address, and predicted tax 0.00 is
 unverified. OCR grounding, arithmetic checks, and page merging were not applied.
@@ -138,7 +138,7 @@ the earlier training cells just to perform inference. Download results from
 `/kaggle/working/pdf_predictions/`. Remove embedded credentials before sharing
 or publishing a notebook; use Kaggle Secrets for authentication when needed.
 
-The local UI still defaults to the dummy API. Hugging Face hosts the adapter
+The local UI defaults to the synthetic test API. Hugging Face hosts the adapter
 weights, not a prediction service. The separate API runs below do not establish
 a public endpoint or end-to-end real-model UI validation.
 
@@ -157,7 +157,7 @@ synthetic receipt does not validate scanned-document OCR or general accuracy.
   seconds, consistent with the accompanying 60-second queue setting.
 - [Completion capture](reports/concurrency_completion.txt): five 200/MISS
   responses with increasing waits up to 100.61 seconds; last completion at
-  125.99 seconds. Processing order is 2, 1, 5, 4, 3. This separately pasted run
+  125.99 seconds. Processing order is 2, 1, 5, 4, 3. This separate recorded run
   has no matching settings/version capture; the suggested 120-second queue
   setting is not verified and does not change the service's 60-second default.
 
@@ -214,7 +214,7 @@ Errors: `{ "error": { "code": "PDF_PASSWORD_PROTECTED", "message": "...", "reque
 | Queue timeout | 503 | `QUEUE_TIMEOUT` |
 | Inference timeout | 504 | `INFERENCE_TIMEOUT` |
 
-`GET /health` liveness. `GET /ready` model/dummy ready. `GET /version`.
+`GET /health` liveness. `GET /ready` backend readiness. `GET /version`.
 
 ## UI: project story and receipt desk
 
@@ -233,7 +233,7 @@ evaluation, feasibility, architecture, and PDF extraction:
 - `#/extract`: the receipt desk. Moving between chapters preserves the current
   browser session; refreshing does not.
 
-The status strip reads `/api/version` and distinguishes synthetic dummy output
+The status strip reads `/api/version` and distinguishes synthetic test output
 from the live backend. It is not a readiness check. Displayed service limits are
 configuration defaults, not live telemetry. The landing image is rendered from
 the project's synthetic sample PDF.
@@ -262,8 +262,10 @@ Unverified money fields stay blank until the clerk types a value or checks
 python scripts/evaluate.py
 ```
 
-Writes `reports/evaluation.md` and `reports/metrics.json`. Dummy numbers are
-measured on sample PDFs. The final notebook comparison evaluates zero-shot and
+Writes synthetic CPU checks to `reports/local-validation/evaluation.md` and
+`reports/local-validation/metrics.json`, leaving the real-model report in
+`reports/evaluation.md` unchanged. These checks use sample PDFs and do not measure
+VLM accuracy. The final notebook comparison evaluates zero-shot and
 fine-tuned stages on the same 32 CORD test receipts with grounding. Treat the
 model results as exploratory. With
 `WANDB_API_KEY`, the same table is logged to wandb.

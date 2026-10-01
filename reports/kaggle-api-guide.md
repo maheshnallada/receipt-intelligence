@@ -243,7 +243,7 @@ except subprocess.TimeoutExpired:
 print("API stopped. Download evidence from:", OUTPUT)
 ```
 
-The bundle was checked locally with the dummy backend, and supplied Kaggle
+The bundle was checked locally with the synthetic test backend, and saved Kaggle
 captures now record real-model API execution plus completion/timeout behavior.
 Those observations are not a guarantee for a new environment or document.
 Keep each new run's version, settings, response, timings, logs, and concurrency
@@ -258,7 +258,7 @@ text can all produce empty output. The updated pipeline preserves `unverified`
 when OCR supplies no evidence and reads OCR once per page. It does not retain
 unsupported model values or relax grounding.
 
-The supplied DMart diagnostic confirmed that generation and parsing succeeded,
+The saved DMart diagnostic confirmed that generation and parsing succeeded,
 but the PDF had no text layer and Tesseract returned only whitespace. Grounding
 therefore removed the predictions. The date was independently nulled because
 the model returned a non-ISO string.
