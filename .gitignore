@@ -24,5 +24,4 @@ node_modules/
 ui/dist/
 ui/node_modules/
 .DS_Store
-diagnostics/
 !reports/.gitkeep

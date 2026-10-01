@@ -1,4 +1,4 @@
-"""CORD v2 → assignment schema chat samples. Official split ids are frozen."""
+"""CORD v2 → receipt schema chat samples. Official split ids are frozen."""
 
 from __future__ import annotations
 

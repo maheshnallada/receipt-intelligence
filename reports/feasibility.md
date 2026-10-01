@@ -14,7 +14,7 @@ receipts plus a separate SROIE header probe.
 
 ## Is a 3B VLM a good fit?
 
-A 4-bit Qwen2.5-VL-3B with language-only LoRA meets the assignment's 4B cap.
+A 4-bit Qwen2.5-VL-3B with language-only LoRA keeps the base model below 4B parameters.
 The saved runs demonstrate execution on a Tesla T4, including an uploaded PDF
 with one repair generation. They do not establish that 3B is the smallest
 capable model or guarantee memory headroom for every document.
@@ -120,4 +120,4 @@ from the CORD latency percentiles and illustrative cost calculation.
 
 ## What we would do next (not implemented)
 
-Serve with a vision-capable engine and constrained JSON decoding, add a deskew/binarize step, mix SROIE for store/date, and train vision-layer LoRA on a 24 GB card. Do not add a second architecture for this take-home.
+Serve with a vision-capable engine and constrained JSON decoding, add a deskew/binarize step, mix SROIE for store/date, and train vision-layer LoRA on a 24 GB card. Prioritize these improvements within the existing architecture.

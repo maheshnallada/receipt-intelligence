@@ -27,7 +27,7 @@ class LineItemOut(BaseModel):
 
 
 class ReceiptOut(BaseModel):
-    """Assignment JSON. Dates ISO, numbers JSON numbers."""
+    """Receipt JSON. Dates ISO, numbers JSON numbers."""
 
     model_config = ConfigDict(extra="forbid", populate_by_name=True)
 
@@ -78,7 +78,7 @@ class ReceiptOut(BaseModel):
             verification={key: Verification(value) for key, value in self.verification.items()},
         )
 
-    def model_dump_assignment(self) -> dict:
+    def model_dump_receipt(self) -> dict:
         return self.model_dump(by_alias=True)
 
 

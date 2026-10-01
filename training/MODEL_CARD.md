@@ -20,7 +20,7 @@ language:
 
 # Receipt extraction LoRA (Qwen2.5-VL-3B)
 
-QLoRA adapter on [`Qwen/Qwen2.5-VL-3B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) for turning a **receipt image** into assignment-schema JSON:
+QLoRA adapter on [`Qwen/Qwen2.5-VL-3B-Instruct`](https://huggingface.co/Qwen/Qwen2.5-VL-3B-Instruct) for turning a **receipt image** into structured receipt JSON:
 
 `store_name`, `date` (`YYYY-MM-DD`), `line_items[]` (`name`, `qty`, `unit_price`, `amount`), `subtotal`, `tax`, `total`.
 
@@ -28,7 +28,7 @@ This repo is **the adapter only**. Load it on the base 3B instruct checkpoint. I
 
 ## Intended use
 
-- Research / take-home baseline for receipt field extraction.
+- Research baseline for receipt field extraction.
 - Pair with a **post-processor**: parse/repair JSON, ground every non-null leaf against page text (null out hallucinations), then sanity-check totals. Scores below are **after** that pipeline.
 
 Not intended as a standalone production OCR product. Do not use for KYC, tax filing, or any decision that needs audited store/date without a second source.

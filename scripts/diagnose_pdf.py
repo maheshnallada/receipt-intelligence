@@ -10,7 +10,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from types import SimpleNamespace
 
-from app.application.extract_receipt import ExtractReceipt, receipt_to_assignment_dict
+from app.application.extract_receipt import ExtractReceipt, receipt_to_dict
 from app.config import Settings
 from app.domain.grounding import ground_receipt
 from app.domain.parse import parse_model_output
@@ -62,7 +62,7 @@ async def diagnose_document(settings, content, filename, *, extractor, renderer,
             attempt["parse_error"] = str(exc)
             attempt["validation_detail"] = str(exc.__cause__) if exc.__cause__ else None
             raise
-        attempt["parsed"] = receipt_to_assignment_dict(receipt)
+        attempt["parsed"] = receipt_to_dict(receipt)
         return receipt
 
     def read_ocr(image):
@@ -75,8 +75,8 @@ async def diagnose_document(settings, content, filename, *, extractor, renderer,
         trace["grounding"].append({
             "text": text,
             "characters": len(text.strip()),
-            "before": receipt_to_assignment_dict(receipt),
-            "after": receipt_to_assignment_dict(grounded),
+            "before": receipt_to_dict(receipt),
+            "after": receipt_to_dict(grounded),
         })
         return grounded
 
@@ -96,7 +96,7 @@ async def diagnose_document(settings, content, filename, *, extractor, renderer,
         result = await usecase.execute(
             content=content, content_type="application/pdf", filename=filename, force_refresh=True,
         )
-        trace["result"] = receipt_to_assignment_dict(result.receipt)
+        trace["result"] = receipt_to_dict(result.receipt)
         trace["processing_ms"] = result.inference_ms
     except Exception as exc:
         trace["error"] = {"type": type(exc).__name__, "message": str(exc)}

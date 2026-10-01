@@ -6,7 +6,7 @@ import asyncio
 import os
 from pathlib import Path
 
-from app.application.extract_receipt import ExtractReceipt, receipt_to_assignment_dict
+from app.application.extract_receipt import ExtractReceipt, receipt_to_dict
 from app.config import Settings
 from app.infrastructure.cache.memory import MemoryCache
 from app.infrastructure.gpu.single_flight import SingleFlightGpuSlot
@@ -59,7 +59,7 @@ async def dummy_stage() -> dict:
     for name, gold in SAMPLES.items():
         content = (ROOT / "samples" / name).read_bytes()
         result = await usecase.execute(content=content, content_type="application/pdf", filename=name)
-        pred = receipt_to_assignment_dict(result.receipt)
+        pred = receipt_to_dict(result.receipt)
         pred.pop("_verification", None)
         golds.append(gold)
         preds.append(pred)

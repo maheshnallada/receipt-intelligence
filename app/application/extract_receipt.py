@@ -111,7 +111,7 @@ class ExtractReceipt:
                 raise
             inference_ms = (time.perf_counter() - started) * 1000.0
 
-        self._cache.set(key, receipt_to_assignment_dict(checked), self._ttl_s)
+        self._cache.set(key, receipt_to_dict(checked), self._ttl_s)
         return self._result(
             checked,
             document,
@@ -175,7 +175,7 @@ class ExtractReceipt:
         )
 
 
-def receipt_to_assignment_dict(receipt: Receipt) -> dict:
+def receipt_to_dict(receipt: Receipt) -> dict:
     return {
         "store_name": receipt.store_name,
         "date": receipt.date.value if receipt.date else None,

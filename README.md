@@ -25,7 +25,7 @@ One bounded context: receipt extraction. Four layers, one way:
 ## Model choice and resolution
 
 **Qwen2.5-VL-3B-Instruct**, QLoRA 4-bit, language/attention/MLP LoRA only
-(r=16, α=32, dropout=0.0). Assignment default, JSON-friendly, fits a T4
+(r=16, α=32, dropout=0.0). JSON-friendly and fits a T4
 with one 1008-token image and one repair pass.
 
 Vision tokens ≈ `pixels / (28×28)`. We render the long edge at **1008 px**
@@ -286,13 +286,12 @@ PDFs, the CORD dump, or LoRA weights.
   product needs a commercial license or a switch to pypdfium2.
 - Session inbox is not persisted.
 
-## Submission checklist
+## Project resources
 
-- [x] GitHub layout matching the assignment
-- [x] [Hugging Face adapter](https://huggingface.co/Mahesh-Nallada/vlm-receipt-extraction-lora)
-- [x] `reports/evaluation.md` (same-test-set zero-shot vs. fine-tuned results)
-- [x] `reports/feasibility.md`
-- [x] `reports/submission_email.md` (email deliverables and template)
-- [x] [Timeout capture](reports/concurrency_output.txt) and [completion capture](reports/concurrency_completion.txt) recorded; provenance and instrumentation limitations documented
-- [ ] Save matching settings/version metadata for the completion run; validate Docker and the real-model UI path
-- [x] `notebooks/01_train_and_eval.ipynb`, `notebooks/02_api_test.ipynb`, `notebooks/03_full_pipeline.ipynb`
+- [Hugging Face adapter](https://huggingface.co/Mahesh-Nallada/vlm-receipt-extraction-lora)
+- [Evaluation report](reports/evaluation.md): same-test-set zero-shot vs. fine-tuned results
+- [Feasibility report](reports/feasibility.md)
+- [Timeout capture](reports/concurrency_output.txt) and [completion capture](reports/concurrency_completion.txt): recorded runs with provenance and instrumentation limitations documented
+
+Outstanding validation: capture matching settings/version metadata for the
+completion run, and validate Docker and the real-model UI path.

@@ -1,6 +1,6 @@
 """Receipt aggregate, line items, and value objects.
 
-Constructing a Receipt enforces the assignment schema: ISO dates, numeric
+Constructing a Receipt enforces the receipt schema: ISO dates, numeric
 money, and a verification entry for every leaf field.
 """
 

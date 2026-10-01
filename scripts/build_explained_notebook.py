@@ -125,7 +125,7 @@ print("eval 1008 edge", smart_hw(864, 1296, 256 * 28 * 28, 1008 * 28 * 28))
 
 **What.** Coerce CORD/model strings to `float | None`. `parse_money` handles `Rp`, `1.234,56` vs `1,234.56`.
 
-**Decision.** Assignment requires JSON numbers. CORD stores money as messy strings. Fail → `null`, never a guessed float.
+**Decision.** The receipt schema requires JSON numbers. CORD stores money as messy strings. Fail → `null`, never a guessed float.
 
 **Tradeoff.** Locale heuristics can misread a rare format. Better than crashing the schema or keeping `"12.50"` as a string (which fails Pydantic in the API)."""
     ),
@@ -141,7 +141,7 @@ print("eval 1008 edge", smart_hw(864, 1296, 256 * 28 * 28, 1008 * 28 * 28))
     md(
         """### `cord_to_schema(gt_parse)`
 
-**What.** Map `gt_parse` → assignment schema. **`store_name` and `date` are always `null`.** Menu `nm/cnt/unitprice/price` → line items. Subtotal/tax/total from `sub_total` / `total`.
+**What.** Map `gt_parse` → receipt schema. **`store_name` and `date` are always `null`.** Menu `nm/cnt/unitprice/price` → line items. Subtotal/tax/total from `sub_total` / `total`.
 
 **Decision.** Do not invent store/date labels CORD does not have. Fine-tune cannot learn those fields from CORD; the API uses synthetic samples + grounding for them.
 
@@ -186,7 +186,7 @@ print("eval 1008 edge", smart_hw(864, 1296, 256 * 28 * 28, 1008 * 28 * 28))
     md(
         """## 2. Grounding, sanity, merge
 
-Assignment policy, encoded here:
+Extraction policy, encoded here:
 
 - **Grounding:** a non-null leaf that is not in the page text is **nulled** and marked `not_found`.
 - **Sanity:** line-sum ≠ subtotal or subtotal+tax ≠ total → keep the number, mark **`unverified`**. Do not null a printed total just because arithmetic failed (discounts, rounding)."""
@@ -223,7 +223,7 @@ Assignment policy, encoded here:
 
 **What.** Per-leaf grounding. A line item whose **name** is not on the page is dropped entirely (not kept with nulled amounts).
 
-**Decision.** Null-out hallucinations. Assignment: never return a value that is not in the document.
+**Decision.** Null-out hallucinations: never return a value that is not in the document.
 
 **Tradeoff.** A real item with an OCR miss on the name disappears. Amounts on that line never reach sanity. Alternative (keep + unverified) would leak invented names into the UI."""
     ),
@@ -262,7 +262,7 @@ Assignment policy, encoded here:
 
 **What.** Parse raw; on failure parse the repair generate; on second failure return `empty_receipt()`.
 
-**Decision.** Assignment: at most **one** extra GPU generate for JSON repair, same slot.
+**Decision.** Allow at most **one** extra GPU generate for JSON repair, same slot.
 
 **Tradeoff.** Two broken generations → empty, not a third try. Latency p95 in eval is often that one retry."""
     ),
@@ -328,7 +328,7 @@ The demo cell is not a function. It builds a gold-like JSON, a hallucination (`s
 
 **What.** Every header field and every line-item leaf must match (items sorted by name).
 
-**Decision.** The assignment’s “hard” number. Honest: 0/8 on the T4 slice.
+**Decision.** Report strict exact match: 0/8 on the T4 slice.
 
 **Tradeoff.** One wrong qty makes the whole receipt fail even if totals are perfect."""
     ),
@@ -339,7 +339,7 @@ The demo cell is not a function. It builds a gold-like JSON, a hallucination (`s
 
 **Decision.** Measured **after** grounding in `summarize`, so 0.0 means the pipeline stripped inventions, not that the VLM never guessed.
 
-**Tradeoff.** If you log this before grounding, you see model honesty; we report the assignment metric (after)."""
+**Tradeoff.** Logging this before grounding measures raw model output; this metric measures output after grounding."""
     ),
     md(
         """### `latency_percentiles` / `summarize` / `show_table`
@@ -493,7 +493,7 @@ Train-cell helpers exist because **truncation, OOM, and NaN** showed up on the T
 
 **What.** Print Δ F1 / Exact for store, date, money, and each line-item leaf.
 
-**Decision.** The assignment result is this table, not a single accuracy. CORD store/date F1 is expected 0.
+**Decision.** Report the comparison table, not a single accuracy. CORD store/date F1 is expected 0.
 
 **Tradeoff.** n=8. Use it to see “items up, totals down”, not to claim a SOTA delta."""
     ),
@@ -512,7 +512,7 @@ Train-cell helpers exist because **truncation, OOM, and NaN** showed up on the T
 | Model | Qwen2.5-VL-3B QLoRA | SmolVLM / PaliGemma / 7B | ≤4B, JSON + OCR, T4 4-bit |
 | Train pixels | 512 vision tokens | 1008 long-edge | Fits 3072 seq; 8192 OOMs |
 | Truncation | Drop overflow rows | Lower `max_length` only | Lowering cuts JSON / image tokens |
-| Grounding | Null if not on page | Keep + unverified | Assignment: never return absent text |
+| Grounding | Null if not on page | Keep + unverified | Never return absent text |
 | Sanity | Keep + unverified | Null broken totals | Printed total can be right |
 | Merge | Header score ≠ money score | One best page | Totals page stole verified store |
 | Structured decode | No (parse + 1 retry) | Outlines | Validity already 1.0; risk of forced guesses |

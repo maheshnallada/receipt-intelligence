@@ -174,7 +174,7 @@ while the adapter increased p50 latency by about 71% and p95 latency by about
 ## Separate SROIE header probe
 
 The 361-receipt SROIE artifact evaluates only `store_name` and `date`. It is a
-header probe, not the assignment schema evaluation, and its `header-fine-tuned`
+header probe, not the full receipt schema evaluation, and its `header-fine-tuned`
 values are identical to the zero-shot values. It should therefore be reported
 as exploratory evidence rather than as proof that the adapter improved the
 model.

@@ -191,7 +191,7 @@ response.raise_for_status()
 
 This cell overwrites the previous capture on rerun: download it first or use
 distinct output filenames for multiple receipts. Outputs may contain personal
-data; keep them private. Do not include the input PDF in a public submission
+data; keep them private. Do not include the input PDF in a public repository
 without permission.
 
 ## 5. Capture concurrent requests

@@ -6,7 +6,7 @@ CORD does not label store name or date. Those target fields are `null` in
 training labels. Synthetic sample PDFs in `samples/` cover those fields for
 the API and UI.
 
-| CORD | Assignment |
+| CORD | Receipt schema |
 |---|---|
 | `menu.nm` | `line_items[].name` |
 | `menu.cnt` | `line_items[].qty` |
