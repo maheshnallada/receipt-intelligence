@@ -126,7 +126,3 @@ overlap alone is not proof of GPU exclusivity. Both the three-success timeout
 run and the five-success completion run are useful evidence; five 200s are not
 a required outcome of correct load shedding. Keep these observations separate
 from the CORD latency percentiles and illustrative cost calculation.
-
-## What we would do next (not implemented)
-
-Serve with a vision-capable engine and constrained JSON decoding, add a deskew/binarize step, mix SROIE for store/date, and train vision-layer LoRA on a 24 GB card. Prioritize these improvements within the existing architecture.
