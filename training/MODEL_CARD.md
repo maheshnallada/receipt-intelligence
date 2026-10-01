@@ -26,6 +26,11 @@ QLoRA adapter on [`Qwen/Qwen2.5-VL-3B-Instruct`](https://huggingface.co/Qwen/Qwe
 
 This repo is **the adapter only**. Load it on the base 3B instruct checkpoint. It is not a merged full model.
 
+## Project links
+
+- [Weights & Biases experiment report](https://forge.coreweave.com/wandb/maheshnallada/vlm-receipt-extraction/reports/Receipt-Intelligence--VmlldzoxODAzNzk0OA): may require sign-in or permission from the report owner.
+- [Deployed frontend](https://receipt-intelligence-chi.vercel.app): frontend only, not a hosted model inference endpoint.
+
 ## Intended use
 
 - Research baseline for receipt field extraction.
@@ -146,7 +151,7 @@ presented as a demonstrated adapter improvement.
 ## Uploaded PDF inference evidence
 
 The saved Kaggle run in
-[Final_Notebook_VLM.ipynb](../notebooks/Final_Notebook_VLM.ipynb), Cells 59-61,
+[final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), Cells 59-61,
 loads the official Qwen base and this Hub adapter on a Tesla T4. Its recorded
 adapter revision is `e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92`.
 

@@ -1,5 +1,12 @@
 # Story UI validation
 
+## Deployed frontend
+
+[Open the frontend](https://receipt-intelligence-chi.vercel.app).
+This deployment hosts the frontend only; live extraction requires a separately
+running API and GPU inference backend. The checks below were performed locally
+and do not establish validation of this hosted deployment.
+
 ## Scope
 
 Six hash-routed views: story, model, evaluation, feasibility, architecture,

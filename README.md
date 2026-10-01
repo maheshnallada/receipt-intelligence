@@ -9,6 +9,11 @@ and verification flags — never invalid JSON, never a guessed value.
 Hardware target: free Colab/Kaggle T4 (16 GB). This checkout runs end-to-end
 in `MODEL_BACKEND=dummy` without a GPU.
 
+## Live frontend and experiment report
+
+- [Deployed frontend](https://receipt-intelligence-chi.vercel.app): frontend only. The extraction API and GPU inference backend are not included in this deployment; live extraction requires a separately running backend.
+- [Weights & Biases experiment report](https://forge.coreweave.com/wandb/maheshnallada/vlm-receipt-extraction/reports/Receipt-Intelligence--VmlldzoxODAzNzk0OA): training and evaluation report. Access may require sign-in or permission from the report owner; access tokens are not published in this repository.
+
 ## Architecture
 
 One bounded context: receipt extraction. Four layers, one way:
@@ -112,7 +117,7 @@ selected separately with `MODEL_ID=Qwen/Qwen2.5-VL-3B-Instruct`.
 
 ## Uploaded PDF: real-model Kaggle evidence
 
-[Final_Notebook_VLM.ipynb](notebooks/Final_Notebook_VLM.ipynb), Cells 59-61,
+[final-notebook-vlm.ipynb](notebooks/final-notebook-vlm.ipynb), Cells 59-61,
 contains a saved Tesla T4 run using the published Hub adapter at revision
 `e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92`. On a one-page `dmart.pdf`, it
 returned seven line items and a predicted total of 845.00. The notebook's

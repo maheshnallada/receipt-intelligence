@@ -1,5 +1,12 @@
 # Evaluation
 
+## Online resources
+
+- [Weights & Biases experiment report](https://forge.coreweave.com/wandb/maheshnallada/vlm-receipt-extraction/reports/Receipt-Intelligence--VmlldzoxODAzNzk0OA): access may require sign-in or permission from the report owner.
+- [Deployed frontend](https://receipt-intelligence-chi.vercel.app): frontend only, without a hosted extraction API or GPU inference backend.
+
+The measurements below describe the saved runs, not benchmarks of the frontend deployment.
+
 ## T4 Notebook Run
 
 The final standalone notebook evaluates the same frozen CORD test slice
@@ -32,7 +39,7 @@ CORD does not label `store_name` or `date`; their F1 remains 0.000 and the exact
 
 ## Uploaded PDF inference smoke test (Kaggle)
 
-Saved evidence: [Final_Notebook_VLM.ipynb](../notebooks/Final_Notebook_VLM.ipynb),
+Saved evidence: [final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb),
 Cells 59-61. This is a real-model run, separate from both the frozen CORD
 comparison above and the dummy API results below.
 

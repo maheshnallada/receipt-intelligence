@@ -1,6 +1,10 @@
 # Feasibility: small VLM for receipt extraction
 
-**Status:** The frozen CORD comparison is saved in
+**Online resources:** [Deployed frontend](https://receipt-intelligence-chi.vercel.app)
+(frontend only; no extraction API or GPU inference backend is deployed there) and
+[Weights & Biases experiment report](https://forge.coreweave.com/wandb/maheshnallada/vlm-receipt-extraction/reports/Receipt-Intelligence--VmlldzoxODAzNzk0OA)
+(may require sign-in or permission from the report owner).
+
 [full_comparison_pipeline.json](../notebooks/full_comparison_pipeline.json).
 The latest uploaded-PDF inference evidence is in
 [final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), Cells 59-61;
