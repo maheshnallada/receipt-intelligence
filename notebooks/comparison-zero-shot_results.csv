@@ -1,0 +1,1171 @@
+stage,receipt_id,actual,ground_truth,raw_predicted,pred
+comparison-zero-shot,0,"901016
+-TICKET CP
+2
+60.000
+60.000
+TOTAL DISC $ -60.000
+TAX 5.455
+Subtotal 60.000
+TOTAL 60.000
+(Qty 2.00
+EDC CIMB NIAGA No: xx7730 60.000","{'line_items': [{'name': '-TICKET CP', 'qty': 2.0, 'amount': 60.0}], 'subtotal': 60.0, 'tax': 5.455, 'total': 60.0}","```json
+{
+  ""store_name"": ""B. B"",
+  ""date"": ""2016-09-01"",
+  ""line_items"": [
+    {
+      ""name"": ""TICKET CP"",
+      ""qty"": ""2"",
+      ""unit_price"": 30,
+      ""amount"": 60
+    }
+  ],
+  ""subtotal"": 60,
+  ""tax"": 5.45,
+  ""total"": 60
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'TICKET CP', 'qty': 2.0, 'unit_price': 30.0, 'amount': 60.0}], 'subtotal': 60.0, 'tax': None, 'total': 60.0}"
+comparison-zero-shot,1,"J.STB PROMO
+17500
+Y.B.BAT
+46000
+Y.BASO PROM
+27500
+TOTAL 91000
+CASH 91000","{'line_items': [{'name': 'J.STB PROMO', 'amount': 17500.0}, {'name': 'Y.B.BAT', 'amount': 46000.0}, {'name': 'Y.BASO PROM', 'amount': 27500.0}], 'total': 91000.0}","```json
+{
+    ""store_name"": ""J.STB PROMO"",
+    ""date"": ""2023-01-01"",
+    ""line_items"": [
+        {
+            ""name"": ""Y.B.BAT"",
+            ""qty"": ""1"",
+            ""unit_price"": 46000,
+            ""amount"": 46000
+        },
+        {
+            ""name"": ""Y.BASO PROM"",
+            ""qty"": ""1"",
+            ""unit_price"": 27500,
+            ""amount"": 27500
+        }
+    ],
+    ""subtotal"": 91000,
+    ""tax"": null,
+    ""total"": 91000
+}
+```","{'store_name': 'J.STB PROMO', 'date': None, 'line_items': [{'name': 'Y.B.BAT', 'qty': None, 'unit_price': 46000.0, 'amount': 46000.0}, {'name': 'Y.BASO PROM', 'qty': None, 'unit_price': 27500.0, 'amount': 27500.0}], 'subtotal': 91000.0, 'tax': None, 'total': 91000.0}"
+comparison-zero-shot,2,"1
+JASMINE MT ( L )
+24,000
+COCONUT JELLY ( L )
+4,000
+SUB TOTAL 28,000
+TOTAL SAI S 28,000
+TOTAL ITEMS 1
+CASH 100,000
+CHANGE 72,000","{'line_items': [{'name': 'JASMINE MT ( L )', 'qty': 1.0, 'amount': 24000.0}, {'name': 'COCONUT JELLY ( L )', 'amount': 4000.0}], 'subtotal': 28000.0, 'total': 28000.0}","```json
+{
+    ""store_name"": ""BINTANG"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""JASMINE MT (L)"",
+            ""qty"": ""1"",
+            ""unit_price"": 24000,
+            ""amount"": 24000
+        },
+        {
+            ""name"": ""COCONUT JELLY (L)"",
+            ""qty"": ""1"",
+            ""unit_price"": 4000,
+            ""amount"": 4000
+        }
+    ],
+    ""subtotal"": 28000,
+    ""tax"": null,
+    ""total"": 72000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'JASMINE MT (L)', 'qty': 1.0, 'unit_price': 24000.0, 'amount': 24000.0}, {'name': 'COCONUT JELLY (L)', 'qty': 1.0, 'unit_price': 4000.0, 'amount': 4000.0}], 'subtotal': 28000.0, 'tax': None, 'total': 72000.0}"
+comparison-zero-shot,3,"1X
+@11000
+DONAT GULA
+11,000
+1.00xITEMs
+SUBTOTAL 11,000
+TOTAL 11,000
+CASH 11,000","{'line_items': [{'name': 'DONAT GULA', 'qty': 1.0, 'unit_price': 11000.0, 'amount': 11000.0}], 'subtotal': 11000.0, 'total': 11000.0}","```json
+{
+    ""store_name"": ""Dynamic Natural"",
+    ""date"": ""2019-03-07"",
+    ""line_items"": [
+        {
+            ""name"": ""DONAT GULA"",
+            ""qty"": ""1X"",
+            ""unit_price"": 11000,
+            ""amount"": 11000
+        }
+    ],
+    ""subtotal"": 11000,
+    ""tax"": null,
+    ""total"": 11000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'DONAT GULA', 'qty': 1.0, 'unit_price': 11000.0, 'amount': 11000.0}], 'subtotal': 11000.0, 'tax': None, 'total': 11000.0}"
+comparison-zero-shot,4,"ICE BLACKCOFFE
+2
+82,000
+AVOCADO COFFEE
+1
+61,000
+CHIKEN KATSU FF
+1
+51,000
+SUB_TOTAL 194,000
+DISCOUNT 19,400
+TOTAL 174,600
+CASH 200,000
+CHANGE 25,400","{'line_items': [{'name': 'ICE BLACKCOFFE', 'qty': 2.0, 'amount': 82000.0}, {'name': 'AVOCADO COFFEE', 'qty': 1.0, 'amount': 61000.0}, {'name': 'CHIKEN KATSU FF', 'qty': 1.0, 'amount': 51000.0}], 'subtotal': 194000.0, 'total': 174600.0}",!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,"{'store_name': None, 'date': None, 'line_items': [], 'subtotal': None, 'tax': None, 'total': None}"
+comparison-zero-shot,5,"TRAD KY TOAST CARTE
+28.182
+ITEMS 1.00
+SUBTTL 28.182
+PB-1 10% 2.818
+TOTAL 31.000
+CASH 31.000","{'line_items': [{'name': 'TRAD KY TOAST CARTE', 'amount': 28.182}], 'subtotal': 28.182, 'tax': 2.818, 'total': 31.0}","```json
+{
+  ""store_name"": ""TRAD KY TOAST CARTE"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""ITEMS 1.00"",
+      ""qty"": null,
+      ""unit_price"": null,
+      ""amount"": 28.182
+    }
+  ],
+  ""subtotal"": 28.182,
+  ""tax"": 2.818,
+  ""total"": 31.00
+}
+```","{'store_name': 'TRAD KY TOAST CARTE', 'date': None, 'line_items': [{'name': 'ITEMS 1.00', 'qty': None, 'unit_price': None, 'amount': 28.182}], 'subtotal': 28.182, 'tax': 2.818, 'total': 31.0}"
+comparison-zero-shot,6,"1
+EGG TART
+13,000
+2
+CHOCO CUS ARD PASTRY
+24,000
+1
+REDBEAN BREAD
+9,000
+TOTAL 46,000
+CASH 50,000
+CHANGE 4,000","{'line_items': [{'name': 'EGG TART', 'qty': 1.0, 'amount': 13000.0}, {'name': 'CHOCO CUS ARD PASTRY', 'qty': 2.0, 'amount': 24000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'amount': 9000.0}], 'total': 46000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""EGG TART"",
+      ""qty"": ""1"",
+      ""unit_price"": 13000,
+      ""amount"": 13000
+    },
+    {
+      ""name"": ""CHOCO CUSTARD PASTRY"",
+      ""qty"": ""2"",
+      ""unit_price"": 24500,
+      ""amount"": 49000
+    },
+    {
+      ""name"": ""REDBEAN BREAD"",
+      ""qty"": ""1"",
+      ""unit_price"": 9000,
+      ""amount"": 9000
+    }
+  ],
+  ""subtotal"": 46000,
+  ""tax"": null,
+  ""total"": 46000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'EGG TART', 'qty': 1.0, 'unit_price': 13000.0, 'amount': 13000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'unit_price': 9000.0, 'amount': 9000.0}], 'subtotal': 46000.0, 'tax': None, 'total': 46000.0}"
+comparison-zero-shot,7,"Kupon 15
+100,000
+ADD CHICKEN BOX
+909
+Subtotal 100,909
+PB1 (10%) 10,091
+Total 111,000
+Cash Rp. 111,000","{'line_items': [{'name': 'Kupon 15', 'amount': 100.0}, {'name': 'ADD CHICKEN BOX', 'amount': 909.0}], 'subtotal': 100.909, 'tax': 10.091, 'total': 111.0}","```json
+{
+  ""store_name"": ""Kupon 15"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""ADD CHICKEN BOX"",
+      ""qty"": ""1"",
+      ""unit_price"": 909,
+      ""amount"": 909
+    }
+  ],
+  ""subtotal"": 100909,
+  ""tax"": 10091,
+  ""total"": 111000
+}
+```","{'store_name': 'Kupon 15', 'date': None, 'line_items': [{'name': 'ADD CHICKEN BOX', 'qty': 1.0, 'unit_price': 909.0, 'amount': 909.0}], 'subtotal': 100909.0, 'tax': 10091.0, 'total': 111000.0}"
+comparison-zero-shot,8,"1
+[REG] BLACK SAKURA
+45,455
+1
+COOKIE DOH SAUCES
+0
+1
+NATA DE COCO
+0
+Sub Total 45,455
+PB1 (10%) 4,545
+Rounding 0
+Total 50,000
+Card Payment 50,000","{'line_items': [{'name': '[REG] BLACK SAKURA', 'qty': 1.0, 'amount': 45455.0}, {'name': 'COOKIE DOH SAUCES', 'qty': 1.0, 'amount': 0.0}, {'name': 'NATA DE COCO', 'qty': 1.0, 'amount': 0.0}], 'subtotal': 45455.0, 'tax': 4545.0, 'total': 50000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""REG BLACK SAKURA"",
+      ""qty"": ""1"",
+      ""unit_price"": 45455,
+      ""amount"": 45455
+    },
+    {
+      ""name"": ""COOKIE DOH SAUCES"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    },
+    {
+      ""name"": ""NATA DE COCO"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    }
+  ],
+  ""subtotal"": 45455,
+  ""tax"": 4545,
+  ""total"": 50000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'COOKIE DOH SAUCES', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}, {'name': 'NATA DE COCO', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}], 'subtotal': 45455.0, 'tax': 4545.0, 'total': 50000.0}"
+comparison-zero-shot,9,"Bumbu Kaldu Ayam 1
+36000
+36000
+Sub Total 36000
+Discount (0%)
+Tunai 50000
+Kembalian 14000","{'line_items': [{'name': 'Bumbu Kaldu Ayam 1', 'unit_price': 36000.0, 'amount': 36000.0}], 'subtotal': 36000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""Bumbu Kaldhu Ayam 1"",
+      ""qty"": ""36000"",
+      ""unit_price"": ""36000"",
+      ""amount"": ""36000""
+    }
+  ],
+  ""subtotal"": ""36000"",
+  ""tax"": null,
+  ""total"": ""50000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [], 'subtotal': 36000.0, 'tax': None, 'total': 50000.0}"
+comparison-zero-shot,10,"CINNAMON SUGAR
+1 x
+17,000
+17,000
+SUB TOTAL 17,000
+GRAND TOTAL 17,000
+CASH IDR 20,000
+CHANGE DUE 3,000","{'line_items': [{'name': 'CINNAMON SUGAR', 'qty': 1.0, 'unit_price': 17000.0, 'amount': 17000.0}], 'subtotal': 17000.0, 'total': 17000.0}","```json
+{
+  ""store_name"": ""Auntie Anne's"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""CINNAMON SUGAR"",
+      ""qty"": ""1 x"",
+      ""unit_price"": ""17,000"",
+      ""amount"": ""17,000""
+    }
+  ],
+  ""subtotal"": ""17,000"",
+  ""tax"": null,
+  ""total"": ""17,000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'CINNAMON SUGAR', 'qty': 1.0, 'unit_price': 17000.0, 'amount': 17000.0}], 'subtotal': 17000.0, 'tax': None, 'total': 17000.0}"
+comparison-zero-shot,11,"1
+BANABERRY FRESH CREAM CAK
+230,000
+TOTAL 230,000
+CASH 230,000
+CHANGE 0","{'line_items': [{'name': 'BANABERRY FRESH CREAM CAK', 'qty': 1.0, 'amount': 230000.0}], 'total': 230000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""BANABERRY FRESH CREAM CAK"",
+      ""qty"": ""1"",
+      ""unit_price"": 230000,
+      ""amount"": 230000
+    }
+  ],
+  ""subtotal"": 230000,
+  ""tax"": null,
+  ""total"": 230000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'BANABERRY FRESH CREAM CAK', 'qty': 1.0, 'unit_price': 230000.0, 'amount': 230000.0}], 'subtotal': 230000.0, 'tax': None, 'total': 230000.0}"
+comparison-zero-shot,12,"0571-1854
+BLUS WANITA
+1
+@120,000
+0%
+120,000
+1002-0060
+SHOPPING BAG
+1
+@880
+100%
+0
+TOTAL 120,000
+(2 item)
+CC.Visa.BCA 120,000
+Total Kembalian 0","{'line_items': [{'name': 'BLUS WANITA', 'qty': 1.0, 'unit_price': 120000.0}, {'name': 'SHOPPING BAG', 'qty': 1.0, 'unit_price': 880.0}], 'total': 120000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""0571-1854 BLUS WANITA"",
+      ""qty"": ""1"",
+      ""unit_price"": ""120,000"",
+      ""amount"": ""120,000""
+    },
+    {
+      ""name"": ""1002-0060 SHOPPING BAG"",
+      ""qty"": ""1"",
+      ""unit_price"": ""880"",
+      ""amount"": ""880""
+    }
+  ],
+  ""subtotal"": ""120,000"",
+  ""tax"": null,
+  ""total"": ""120,000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': '0571-1854 BLUS WANITA', 'qty': 1.0, 'unit_price': 120000.0, 'amount': 120000.0}, {'name': '1002-0060 SHOPPING BAG', 'qty': 1.0, 'unit_price': 880.0, 'amount': 880.0}], 'subtotal': 120000.0, 'tax': None, 'total': 120000.0}"
+comparison-zero-shot,13,"BASO KUAH
+1
+43.636
+43.636
+A.MINERAL GELAS
+1
+3,000
+3,000
+TOTAL 46.636
+DPP 46.636
+TAX 10.00 % 4.664
+GRAND TOTAL 51.300
+TUNAI 52.000
+KEMBALI 700","{'line_items': [{'name': 'BASO KUAH', 'qty': 1.0, 'unit_price': 43.636, 'amount': 43.636}, {'name': 'A.MINERAL GELAS', 'qty': 1.0, 'unit_price': 3000.0, 'amount': 3000.0}], 'subtotal': 46.636, 'tax': 4.664, 'total': 51.3}","```json
+{
+    ""store_name"": ""A FUNG"",
+    ""date"": ""2023-01-06"",
+    ""line_items"": [
+        {
+            ""name"": ""BASO KUAH"",
+            ""qty"": ""1"",
+            ""unit_price"": 43.636,
+            ""amount"": 43.636
+        },
+        {
+            ""name"": ""A.MINERAL GELAS"",
+            ""qty"": ""1"",
+            ""unit_price"": 3.000,
+            ""amount"": 3.000
+        }
+    ],
+    ""subtotal"": 46.636,
+    ""tax"": 4.664,
+    ""total"": 51.300
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'BASO KUAH', 'qty': 1.0, 'unit_price': 43.636, 'amount': 43.636}, {'name': 'A.MINERAL GELAS', 'qty': 1.0, 'unit_price': 3.0, 'amount': 3.0}], 'subtotal': 46.636, 'tax': 4.664, 'total': 51.3}"
+comparison-zero-shot,14,"1
+RedVelvet Cheese Slc
+38,000
+1
+Chicken Baked Rice
+55,000
+1
+Fish n Chips
+65,000
+1
+Mushroom Soup
+35,000
+1
+Chamomile
+25,000
+1
+Iced Tea
+20,000
+SUBTOTAL 238,000
+Service 17,850
+PB1 25,585
+TOTAL 281,435
+Coupon 100,000
+CASH 200,000
+Change 18,565","{'line_items': [{'name': 'RedVelvet Cheese Slc', 'qty': 1.0, 'amount': 38000.0}, {'name': 'Chicken Baked Rice', 'qty': 1.0, 'amount': 55000.0}, {'name': 'Fish n Chips', 'qty': 1.0, 'amount': 65000.0}, {'name': 'Mushroom Soup', 'qty': 1.0, 'amount': 35000.0}, {'name': 'Chamomile', 'qty': 1.0, 'amount': 25000.0}, {'name': 'Iced Tea', 'qty': 1.0, 'amount': 20000.0}], 'subtotal': 238000.0, 'tax': 25585.0, 'total': 281435.0}","```json
+{
+  ""store_name"": ""BINTANG"",
+  ""date"": ""2023-05-18"",
+  ""line_items"": [
+    {
+      ""name"": ""Red Velvet Cheese Slc"",
+      ""qty"": ""1"",
+      ""unit_price"": 38000,
+      ""amount"": 38000
+    },
+    {
+      ""name"": ""Chicken Baked Rice"",
+      ""qty"": ""1"",
+      ""unit_price"": 55000,
+      ""amount"": 55000
+    },
+    {
+      ""name"": ""Fish n Chips"",
+      ""qty"": ""1"",
+      ""unit_price"": 62000,
+      ""amount"": 62000
+    },
+    {
+      ""name"": ""Mushroom Soup"",
+      ""qty"": ""1"",
+      ""unit_price"": 35000,
+      ""amount"": 35000
+    },
+    {
+      ""name"": ""Chamomile"",
+      ""qty"": ""1"",
+      ""unit_price"": 25000,
+      ""amount"": 25000
+    },
+    {
+      ""name"": ""Iced Tea"",
+      ""qty"": ""1"",
+      ""unit_price"": 20000,
+      ""amount"": 20000
+    }
+  ],
+  ""subtotal"": 238000,
+  ""tax"": 17850,
+  ""total"": 25585
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'Red Velvet Cheese Slc', 'qty': 1.0, 'unit_price': 38000.0, 'amount': 38000.0}, {'name': 'Chicken Baked Rice', 'qty': 1.0, 'unit_price': 55000.0, 'amount': 55000.0}, {'name': 'Fish n Chips', 'qty': 1.0, 'unit_price': None, 'amount': None}, {'name': 'Mushroom Soup', 'qty': 1.0, 'unit_price': 35000.0, 'amount': 35000.0}, {'name': 'Chamomile', 'qty': 1.0, 'unit_price': 25000.0, 'amount': 25000.0}, {'name': 'Iced Tea', 'qty': 1.0, 'unit_price': 20000.0, 'amount': 20000.0}], 'subtotal': 238000.0, 'tax': 17850.0, 'total': 25585.0}"
+comparison-zero-shot,15,"1
+Lemon Tea (L)
+25.000
+1
+Caramel Small
+38.000
+TOTAL 63.000
+CASH 70.000
+CHANGED 7.000","{'line_items': [{'name': 'Lemon Tea (L)', 'qty': 1.0, 'amount': 25.0}, {'name': 'Caramel Small', 'qty': 1.0, 'amount': 38.0}], 'total': 63.0}","```json
+{
+    ""store_name"": ""XXI cafe"",
+    ""date"": ""2023-05-17"",
+    ""line_items"": [
+        {
+            ""name"": ""Lemon Tea (L)"",
+            ""qty"": ""1"",
+            ""unit_price"": 25.0,
+            ""amount"": 25.0
+        },
+        {
+            ""name"": ""Caramel Small"",
+            ""qty"": ""1"",
+            ""unit_price"": 38.0,
+            ""amount"": 38.0
+        }
+    ],
+    ""subtotal"": 63.0,
+    ""tax"": null,
+    ""total"": 63.0
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'Lemon Tea (L)', 'qty': 1.0, 'unit_price': 25.0, 'amount': 25.0}, {'name': 'Caramel Small', 'qty': 1.0, 'unit_price': 38.0, 'amount': 38.0}], 'subtotal': 63.0, 'tax': None, 'total': 63.0}"
+comparison-zero-shot,16,"1
+[LG] BLACK SAKURA
+59,091
+1
+LONGAN
+0
+1
+ROASTED ALMOND
+0
+1
+IVANGGO
+0
+1
+IVINERAL WATER (bundling) 5k
+4,545
+Sub Total 63,636
+PB1 (10%) 6,364
+Rounding 0
+Total 70,000
+Cash Payment 100,000
+Change 30,000","{'line_items': [{'name': '[LG] BLACK SAKURA', 'qty': 1.0, 'amount': 59091.0}, {'name': 'LONGAN', 'qty': 1.0, 'amount': 0.0}, {'name': 'ROASTED ALMOND', 'qty': 1.0, 'amount': 0.0}, {'name': 'IVANGGO', 'qty': 1.0, 'amount': 0.0}, {'name': 'IVINERAL WATER (bundling) 5k', 'qty': 1.0, 'amount': 4545.0}], 'subtotal': 63636.0, 'tax': 6364.0, 'total': 70000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""[LG] BLACK SAKURA"",
+      ""qty"": ""1"",
+      ""unit_price"": 59091,
+      ""amount"": 59091
+    },
+    {
+      ""name"": ""LONGAN"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    },
+    {
+      ""name"": ""ROASTED ALMOND"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    },
+    {
+      ""name"": ""MANGGO"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    },
+    {
+      ""name"": ""MINERAL WATER (bundling) 5k"",
+      ""qty"": ""1"",
+      ""unit_price"": 4545,
+      ""amount"": 4545
+    }
+  ],
+  ""subtotal"": 63636,
+  ""tax"": 6364,
+  ""total"": 70000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': '[LG] BLACK SAKURA', 'qty': 1.0, 'unit_price': 59091.0, 'amount': 59091.0}, {'name': 'LONGAN', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}, {'name': 'ROASTED ALMOND', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}], 'subtotal': 63636.0, 'tax': 6364.0, 'total': 70000.0}"
+comparison-zero-shot,17,"Goblin's Mace
+1
+25,000
+Mozarella Hot Dog
+2
+38,000
+Chili Pepper Croquette
+1
+14,000
+Cheese Croquette
+1
+14,000
+Plastik Amook
+1
+0
+Plastik Putih Take Away
+1
+0
+Subtotal 91,000
+Discount (0)
+TOTAL Rp. 91,000
+Debit 91,000","{'line_items': [{'name': ""Goblin's Mace"", 'qty': 1.0, 'amount': 25.0}, {'name': 'Mozarella Hot Dog', 'qty': 2.0, 'amount': 38.0}, {'name': 'Chili Pepper Croquette', 'qty': 1.0, 'amount': 14.0}, {'name': 'Cheese Croquette', 'qty': 1.0, 'amount': 14.0}, {'name': 'Plastik Amook', 'qty': 1.0, 'amount': 0.0}, {'name': 'Plastik Putih Take Away', 'qty': 1.0, 'amount': 0.0}], 'subtotal': 91.0, 'total': 91.0}","```json
+{
+  ""store_name"": ""삼진 어묵"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""Goblin's Mace"",
+      ""qty"": ""1"",
+      ""unit_price"": 25000,
+      ""amount"": 25000
+    },
+    {
+      ""name"": ""Mozarellia Hot Dog"",
+      ""qty"": ""2"",
+      ""unit_price"": 38000,
+      ""amount"": 76000
+    },
+    {
+      ""name"": ""Chili Pepper Croquette"",
+      ""qty"": ""1"",
+      ""unit_price"": 14000,
+      ""amount"": 14000
+    },
+    {
+      ""name"": ""Cheese Croquette"",
+      ""qty"": ""1"",
+      ""unit_price"": 14000,
+      ""amount"": 14000
+    },
+    {
+      ""name"": ""Plastik Amook"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    },
+    {
+      ""name"": ""Plastik Putih Take Away"",
+      ""qty"": ""1"",
+      ""unit_price"": 0,
+      ""amount"": 0
+    }
+  ],
+  ""subtotal"": 91000,
+  ""tax"": null,
+  ""total"": 91000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': ""Goblin's Mace"", 'qty': 1.0, 'unit_price': 25000.0, 'amount': 25000.0}, {'name': 'Chili Pepper Croquette', 'qty': 1.0, 'unit_price': 14000.0, 'amount': 14000.0}, {'name': 'Cheese Croquette', 'qty': 1.0, 'unit_price': 14000.0, 'amount': 14000.0}, {'name': 'Plastik Amook', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}, {'name': 'Plastik Putih Take Away', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}], 'subtotal': 91000.0, 'tax': None, 'total': 91000.0}"
+comparison-zero-shot,18,"Propolis Cair
+1
+156000
+156000
+Sub Tofal 156000
+Tunai 156000
+Kembalian Rp. 0","{'line_items': [{'name': 'Propolis Cair', 'qty': 1.0, 'unit_price': 156000.0, 'amount': 156000.0}], 'total': 156000.0}","```json
+{
+  ""store_name"": ""BIRU"",
+  ""date"": ""2023-05-14"",
+  ""line_items"": [
+    {
+      ""name"": ""Propolis Cair 1"",
+      ""qty"": ""1"",
+      ""unit_price"": 156000,
+      ""amount"": 156000
+    }
+  ],
+  ""subtotal"": 156000,
+  ""tax"": null,
+  ""total"": 156000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'Propolis Cair 1', 'qty': 1.0, 'unit_price': 156000.0, 'amount': 156000.0}], 'subtotal': 156000.0, 'tax': None, 'total': 156000.0}"
+comparison-zero-shot,19,"4
+AMBUSH DBL CHS
+60000
+10
+AMBUSH CHS BUR
+100000
+NET SALES 160000
+TAX 16000
+AMOUNT DUE 176000","{'line_items': [{'name': 'AMBUSH DBL CHS', 'qty': 4.0, 'amount': 60000.0}, {'name': 'AMBUSH CHS BUR', 'qty': 10.0, 'amount': 100000.0}], 'subtotal': 160000.0, 'tax': 16000.0, 'total': 176000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""AMBUSH DBL CHS"",
+      ""qty"": ""4"",
+      ""unit_price"": ""60000"",
+      ""amount"": ""240000""
+    },
+    {
+      ""name"": ""AMBUSH CHS BUR"",
+      ""qty"": ""10"",
+      ""unit_price"": ""100000"",
+      ""amount"": ""100000""
+    }
+  ],
+  ""subtotal"": ""340000"",
+  ""tax"": ""18000"",
+  ""total"": ""358000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'AMBUSH DBL CHS', 'qty': 4.0, 'unit_price': 60000.0, 'amount': None}, {'name': 'AMBUSH CHS BUR', 'qty': 10.0, 'unit_price': 100000.0, 'amount': 100000.0}], 'subtotal': None, 'tax': None, 'total': None}"
+comparison-zero-shot,20,"1
+cashew nuts chkn
+64,500
+1
+garlic pepper beef
+79,500
+1
+red curry beef
+69,500
+1
+phad thai
+64,500
+4
+steamed rice
+47,600
+SUBTOTAL 325,600
+Service chrg 17,908
+10% PB1 34,351
+TOTAL 377,859","{'line_items': [{'name': 'cashew nuts chkn', 'qty': 1.0, 'amount': 64500.0}, {'name': 'garlic pepper beef', 'qty': 1.0, 'amount': 79500.0}, {'name': 'red curry beef', 'qty': 1.0, 'amount': 69500.0}, {'name': 'phad thai', 'qty': 1.0, 'amount': 64500.0}, {'name': 'steamed rice', 'qty': 4.0, 'amount': 47600.0}], 'subtotal': 325600.0, 'tax': 34351.0, 'total': 377859.0}","```json
+{
+    ""store_name"": ""BANGKOK BURGER"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""cashew nuts chkn"",
+            ""qty"": ""1"",
+            ""unit_price"": 64500,
+            ""amount"": 64500
+        },
+        {
+            ""name"": ""garlic pepper beef"",
+            ""qty"": ""1"",
+            ""unit_price"": 79500,
+            ""amount"": 79500
+        },
+        {
+            ""name"": ""red curry beef"",
+            ""qty"": ""1"",
+            ""unit_price"": 89500,
+            ""amount"": 89500
+        },
+        {
+            ""name"": ""phad thai"",
+            ""qty"": ""1"",
+            ""unit_price"": 64500,
+            ""amount"": 64500
+        },
+        {
+            ""name"": ""steamed rice"",
+            ""qty"": ""4"",
+            ""unit_price"": 47600,
+            ""amount"": 189600
+        }
+    ],
+    ""subtotal"": 325600,
+    ""tax"": 17908,
+    ""total"": 377858
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'cashew nuts chkn', 'qty': 1.0, 'unit_price': 64500.0, 'amount': 64500.0}, {'name': 'garlic pepper beef', 'qty': 1.0, 'unit_price': 79500.0, 'amount': 79500.0}, {'name': 'red curry beef', 'qty': 1.0, 'unit_price': None, 'amount': None}, {'name': 'phad thai', 'qty': 1.0, 'unit_price': 64500.0, 'amount': 64500.0}, {'name': 'steamed rice', 'qty': 4.0, 'unit_price': 47600.0, 'amount': None}], 'subtotal': 325600.0, 'tax': 17908.0, 'total': None}"
+comparison-zero-shot,21,"1
+35.000
+Rp 35.000
+NASI GOR SFD TLR
+1
+3.000
+Rp 3.000
+ES TEH TAWAR
+***TOTAL Rp 38.000
+CASH Rp 50.000
+CHANGE Rp 12.000","{'line_items': [{'name': 'NASI GOR SFD TLR', 'qty': 1.0, 'unit_price': 35000.0, 'amount': 35000.0}, {'name': 'ES TEH TAWAR', 'qty': 1.0, 'unit_price': 3000.0, 'amount': 3000.0}], 'total': 38000.0}","```json
+{
+    ""store_name"": ""KFC"",
+    ""date"": ""2023-05-17"",
+    ""line_items"": [
+        {
+            ""name"": ""NASI GOR SFD TLR"",
+            ""qty"": ""1"",
+            ""unit_price"": 35.0,
+            ""amount"": 35.0
+        },
+        {
+            ""name"": ""TEH TAWAR"",
+            ""qty"": ""1"",
+            ""unit_price"": 3.0,
+            ""amount"": 3.0
+        }
+    ],
+    ""subtotal"": 38.0,
+    ""tax"": null,
+    ""total"": 38.0
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'NASI GOR SFD TLR', 'qty': 1.0, 'unit_price': 35.0, 'amount': 35.0}, {'name': 'TEH TAWAR', 'qty': 1.0, 'unit_price': 3.0, 'amount': 3.0}], 'subtotal': 38.0, 'tax': None, 'total': 38.0}"
+comparison-zero-shot,22,"2
+[MD] SOFT STEAMED CHEESEC
+20,000
+2
+[MD] SOFT STEAMED CHOCOCA
+20,000
+TOTAL 40,000
+CASH 100,000
+CHANGE 60,000","{'line_items': [{'name': '[MD] SOFT STEAMED CHEESEC', 'qty': 2.0, 'amount': 20000.0}, {'name': '[MD] SOFT STEAMED CHOCOCA', 'qty': 2.0, 'amount': 20000.0}], 'total': 40000.0}","```json
+{
+    ""store_name"": ""TIBET LEE"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""[MD] SOFT STEAMED CHEESEC"",
+            ""qty"": ""2"",
+            ""unit_price"": 10000,
+            ""amount"": 20000
+        },
+        {
+            ""name"": ""[MD] SOFT STEAMED CHOCOCA"",
+            ""qty"": ""2"",
+            ""unit_price"": 10000,
+            ""amount"": 20000
+        }
+    ],
+    ""subtotal"": 40000,
+    ""tax"": null,
+    ""total"": 60000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': '[MD] SOFT STEAMED CHEESEC', 'qty': 2.0, 'unit_price': 10000.0, 'amount': 20000.0}, {'name': '[MD] SOFT STEAMED CHOCOCA', 'qty': 2.0, 'unit_price': 10000.0, 'amount': 20000.0}], 'subtotal': 40000.0, 'tax': None, 'total': 60000.0}"
+comparison-zero-shot,23,"6
+TWIST DONUT
+54,000
+1
+REDBEAN BREAD
+9,000
+TOTAL 63,000
+CASH 70,000
+CHANGE 7,000","{'line_items': [{'name': 'TWIST DONUT', 'qty': 6.0, 'amount': 54000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'amount': 9000.0}], 'total': 63000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""TWIST DONUT"",
+      ""qty"": ""6"",
+      ""unit_price"": null,
+      ""amount"": ""54,000""
+    },
+    {
+      ""name"": ""REDBEAN BREAD"",
+      ""qty"": ""1"",
+      ""unit_price"": null,
+      ""amount"": ""9,000""
+    }
+  ],
+  ""subtotal"": ""63,000"",
+  ""tax"": null,
+  ""total"": ""7,000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'TWIST DONUT', 'qty': 6.0, 'unit_price': 9000.0, 'amount': 54000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'unit_price': 9000.0, 'amount': 9000.0}], 'subtotal': 63000.0, 'tax': None, 'total': 7000.0}"
+comparison-zero-shot,24,"5001-Corn Flakes Cookies
+Rp.56.000
+x1
+Rp.56.000
+5003-Chokoreto Cookies
+Rp.62.000
+x1
+Rp.62.000
+6002-Plastic Bag Medium
+Rp.0
+x1
+Rp.0
+Total Item: 3
+Total, Rp.118.000
+Debet Card 118.000","{'line_items': [{'name': '5001-Corn Flakes Cookies', 'qty': 1.0, 'unit_price': 56000.0, 'amount': 56000.0}, {'name': '5003-Chokoreto Cookies', 'qty': 1.0, 'unit_price': 62000.0, 'amount': 62000.0}, {'name': '6002-Plastic Bag Medium', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}], 'total': 118000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""5001-Corn Flakes Cookies"",
+      ""qty"": ""x1"",
+      ""unit_price"": ""Rp.56.000"",
+      ""amount"": ""Rp.56.000""
+    },
+    {
+      ""name"": ""5003-Chakoreto Cookies"",
+      ""qty"": ""x1"",
+      ""unit_price"": ""Rp.62.000"",
+      ""amount"": ""Rp.62.000""
+    },
+    {
+      ""name"": ""6002-Plastic Bag Medium"",
+      ""qty"": ""x1"",
+      ""unit_price"": ""Rp.0"",
+      ""amount"": ""Rp.0""
+    }
+  ],
+  ""subtotal"": ""Rp.118.000"",
+  ""tax"": null,
+  ""total"": ""Rp.118.000""
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': '5001-Corn Flakes Cookies', 'qty': 1.0, 'unit_price': 56000.0, 'amount': 56000.0}, {'name': '6002-Plastic Bag Medium', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}], 'subtotal': 118000.0, 'tax': None, 'total': 118000.0}"
+comparison-zero-shot,25,"1
+TWIST STRAWBERRY DONUT
+10,000
+1
+TLJ CROQUETTE
+17,000
+1
+POTATO PEPPER BAGEL
+16,000
+TOTAL 43,000
+CASH 50,000
+CHANGE 7,000","{'line_items': [{'name': 'TWIST STRAWBERRY DONUT', 'qty': 1.0, 'amount': 10000.0}, {'name': 'TLJ CROQUETTE', 'qty': 1.0, 'amount': 17000.0}, {'name': 'POTATO PEPPER BAGEL', 'qty': 1.0, 'amount': 16000.0}], 'total': 43000.0}","```json
+{
+  ""store_name"": ""BINTANG"",
+  ""date"": ""2023-05-14"",
+  ""line_items"": [
+    {
+      ""name"": ""TWIST STRAWBERRY DONUT"",
+      ""qty"": ""1"",
+      ""unit_price"": 10000,
+      ""amount"": 10000
+    },
+    {
+      ""name"": ""TLJ CROQUETTE"",
+      ""qty"": ""1"",
+      ""unit_price"": 17000,
+      ""amount"": 17000
+    },
+    {
+      ""name"": ""POTATO PEPPER BAGEL"",
+      ""qty"": ""1"",
+      ""unit_price"": 16000,
+      ""amount"": 16000
+    }
+  ],
+  ""subtotal"": 43000,
+  ""tax"": null,
+  ""total"": 43000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'TWIST STRAWBERRY DONUT', 'qty': 1.0, 'unit_price': 10000.0, 'amount': 10000.0}, {'name': 'TLJ CROQUETTE', 'qty': 1.0, 'unit_price': 17000.0, 'amount': 17000.0}, {'name': 'POTATO PEPPER BAGEL', 'qty': 1.0, 'unit_price': 16000.0, 'amount': 16000.0}], 'subtotal': 43000.0, 'tax': None, 'total': 43000.0}"
+comparison-zero-shot,26,"Cap Cay
+Nasi Cap Cay Porsi B esar
+1
+65.000
+65.000
+Minuman
+Teh Tawar
+2
+4.000
+Lain-lain
+Fu Yung Hai
+1
+65.000
+65.000
+Subtotal Rp 138.000
+Total Rp 138.000
+Cash Rp 138.000
+Change Rp 0","{'line_items': [{'name': 'Nasi Cap Cay Porsi B esar', 'qty': 1.0, 'unit_price': 65000.0, 'amount': 65000.0}, {'name': 'Teh Tawar', 'qty': 2.0, 'unit_price': 4000.0}, {'name': 'Fu Yung Hai', 'qty': 1.0, 'unit_price': 65000.0, 'amount': 65000.0}], 'subtotal': 138000.0, 'total': 138000.0}","```json
+{
+  ""store_name"": ""CAP CAY"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""Nasi Cap Cay Porsi B"",
+      ""qty"": ""1"",
+      ""unit_price"": 65.000,
+      ""amount"": 65.000
+    },
+    {
+      ""name"": ""Teh Tawar"",
+      ""qty"": ""2"",
+      ""unit_price"": 4.000,
+      ""amount"": 8.000
+    },
+    {
+      ""name"": ""Fu Yung Hai"",
+      ""qty"": ""1"",
+      ""unit_price"": 65.000,
+      ""amount"": 65.000
+    }
+  ],
+  ""subtotal"": 138.000,
+  ""tax"": null,
+  ""total"": 138.000
+}
+```","{'store_name': 'CAP CAY', 'date': None, 'line_items': [{'name': 'Nasi Cap Cay Porsi B', 'qty': 1.0, 'unit_price': 65.0, 'amount': 65.0}, {'name': 'Teh Tawar', 'qty': 2.0, 'unit_price': 4.0, 'amount': None}, {'name': 'Fu Yung Hai', 'qty': 1.0, 'unit_price': 65.0, 'amount': 65.0}], 'subtotal': 138.0, 'tax': None, 'total': 138.0}"
+comparison-zero-shot,27,"PKT AYAM
+33,000
+GULAI OTAK
+23,000
+2.00 ITEMS
+SUBTOTAL 56,000
+TAX 10% 5,600
+TOTAL 61,600
+CHARGE5 61,600","{'line_items': [{'name': 'PKT AYAM', 'amount': 33000.0}, {'name': 'GULAI OTAK', 'amount': 23000.0}], 'subtotal': 56000.0, 'tax': 5600.0, 'total': 61600.0}","```json
+{
+    ""store_name"": ""FOODPOINT"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""PKT AYAM"",
+            ""qty"": ""2.00"",
+            ""unit_price"": 33000,
+            ""amount"": 66000
+        },
+        {
+            ""name"": ""GULAI OTAK"",
+            ""qty"": ""2.00"",
+            ""unit_price"": 23000,
+            ""amount"": 46000
+        }
+    ],
+    ""subtotal"": 56000,
+    ""tax"": 5600,
+    ""total"": 61600
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'PKT AYAM', 'qty': 2.0, 'unit_price': 33000.0, 'amount': None}, {'name': 'GULAI OTAK', 'qty': 2.0, 'unit_price': 23000.0, 'amount': None}], 'subtotal': 56000.0, 'tax': 5600.0, 'total': 61600.0}"
+comparison-zero-shot,28,"SAMGYOPSAL
+2
+194,000
+SUL LUNG TANG
+1
+75,000
+MAKOLI
+1
+100,000
+Sub Total 369,000
+Service 18,450
+VAT 38,745
+Discount 0
+TOTAL 426,195","{'line_items': [{'name': 'SAMGYOPSAL', 'qty': 2.0, 'amount': 194000.0}, {'name': 'SUL LUNG TANG', 'qty': 1.0, 'amount': 75000.0}, {'name': 'MAKOLI', 'qty': 1.0, 'amount': 100000.0}], 'subtotal': 369000.0, 'tax': 38745.0, 'total': 426195.0}","```json
+{
+  ""store_name"": ""SAMGYOPSAL"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""SUL LUNG TANG"",
+      ""qty"": ""1"",
+      ""unit_price"": ""75,000"",
+      ""amount"": ""75,000""
+    },
+    {
+      ""name"": ""MAKOLI"",
+      ""qty"": ""1"",
+      ""unit_price"": ""100,000"",
+      ""amount"": ""100,000""
+    }
+  ],
+  ""subtotal"": ""369,000"",
+  ""tax"": ""38,745"",
+  ""total"": ""426,195""
+}
+```","{'store_name': 'SAMGYOPSAL', 'date': None, 'line_items': [{'name': 'SUL LUNG TANG', 'qty': 1.0, 'unit_price': 75000.0, 'amount': 75000.0}, {'name': 'MAKOLI', 'qty': 1.0, 'unit_price': 100000.0, 'amount': 100000.0}], 'subtotal': 369000.0, 'tax': 38745.0, 'total': 426195.0}"
+comparison-zero-shot,29,"COLD OCHA
+1
+10,909
+BCA PROMO
+1
+54,455
+ABURA UDON SPICY
+1
+0
+1
+:-KAKE UDON
+0
+SKEWERED SHUMAI
+1
+12,727
+SKEWERED TOFU ROLL
+1
+12,727
+EBI TEMPURA
+1
+13,636
+KITSUNE UDON (KIDS)
+1
+28,182
+SUB, TOTAL 132,636
+RESTAURANT TAX 13,264
+GRAND TOTAL 145,900
+~ BCA EDC [145,900]","{'line_items': [{'name': 'COLD OCHA', 'qty': 1.0, 'amount': 10909.0}, {'name': 'BCA PROMO', 'qty': 1.0, 'amount': 54455.0}, {'name': 'ABURA UDON SPICY', 'qty': 1.0, 'amount': 0.0}, {'name': ':-KAKE UDON', 'qty': 1.0, 'amount': 0.0}, {'name': 'SKEWERED SHUMAI', 'qty': 1.0, 'amount': 12727.0}, {'name': 'SKEWERED TOFU ROLL', 'qty': 1.0, 'amount': 12727.0}, {'name': 'EBI TEMPURA', 'qty': 1.0, 'amount': 13636.0}, {'name': 'KITSUNE UDON (KIDS)', 'qty': 1.0, 'amount': 28182.0}], 'subtotal': 132636.0, 'tax': 13264.0, 'total': 145900.0}","```json
+{
+    ""store_name"": ""COLD OCHA"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""BCA PROMO"",
+            ""qty"": ""1"",
+            ""unit_price"": 54.455,
+            ""amount"": 54.455
+        },
+        {
+            ""name"": ""ABURA UDON SPICY"",
+            ""qty"": ""1"",
+            ""unit_price"": 0,
+            ""amount"": 0
+        },
+        {
+            ""name"": ""KAKE UDON"",
+            ""qty"": ""1"",
+            ""unit_price"": 0,
+            ""amount"": 0
+        },
+        {
+            ""name"": ""SKEWERED SHUMAI"",
+            ""qty"": ""1"",
+            ""unit_price"": 12.727,
+            ""amount"": 12.727
+        },
+        {
+            ""name"": ""SKEWERED TOFU ROLL"",
+            ""qty"": ""1"",
+            ""unit_price"": 12.727,
+            ""amount"": 12.727
+        },
+        {
+            ""name"": ""EBI TEMPURA"",
+            ""qty"": ""1"",
+            ""unit_price"": 13.636,
+            ""amount"": 13.636
+        },
+        {
+            ""name"": ""KITSUNE UDON (KIDS)"",
+            ""qty"": ""1"",
+            ""unit_price"": 28.182,
+            ""amount"": 28.182
+        }
+    ],
+    ""subtotal"": 132.636,
+    ""tax"": 13.264,
+    ""total"": 145.90
+}
+```","{'store_name': 'COLD OCHA', 'date': None, 'line_items': [{'name': 'BCA PROMO', 'qty': 1.0, 'unit_price': 54.455, 'amount': 54.455}, {'name': 'ABURA UDON SPICY', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}, {'name': 'KAKE UDON', 'qty': 1.0, 'unit_price': 0.0, 'amount': 0.0}, {'name': 'SKEWERED SHUMAI', 'qty': 1.0, 'unit_price': 12.727, 'amount': 12.727}, {'name': 'SKEWERED TOFU ROLL', 'qty': 1.0, 'unit_price': 12.727, 'amount': 12.727}, {'name': 'EBI TEMPURA', 'qty': 1.0, 'unit_price': 13.636, 'amount': 13.636}, {'name': 'KITSUNE UDON (KIDS)', 'qty': 1.0, 'unit_price': 28.182, 'amount': 28.182}], 'subtotal': 132.636, 'tax': 13.264, 'total': 145.9}"
+comparison-zero-shot,30,"Kupon 3
+28,636
+Subtotal 28,636
+PB1 (10%) 2,864
+Dine In Total 31,500
+Cash 50,000
+Change 18,500","{'line_items': [{'name': 'Kupon 3', 'amount': 28636.0}], 'subtotal': 28636.0, 'tax': 2864.0, 'total': 31500.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""Kupon 3"",
+      ""qty"": null,
+      ""unit_price"": null,
+      ""amount"": 28636
+    }
+  ],
+  ""subtotal"": 28636,
+  ""tax"": 2864,
+  ""total"": 31500
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'Kupon 3', 'qty': None, 'unit_price': None, 'amount': 28636.0}], 'subtotal': 28636.0, 'tax': 2864.0, 'total': 31500.0}"
+comparison-zero-shot,31,"1
+SALMON PESTO
+85,500
+1
+SALMON PESTO
+85,500
+Disc -100% (ITM06) -85,500
+SUBTTL 85,500
+SVC CHG 6% 10,260
+PB1 10% 18,126
+TOTAL 113,886","{'line_items': [{'name': 'SALMON PESTO', 'qty': 1.0, 'amount': 85500.0}, {'name': 'SALMON PESTO', 'qty': 1.0, 'amount': 85500.0}], 'subtotal': 85500.0, 'tax': 18126.0, 'total': 113886.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""SALMON PESTO"",
+      ""qty"": ""1"",
+      ""unit_price"": 85.5,
+      ""amount"": 85.5
+    },
+    {
+      ""name"": ""SALMON PESTO"",
+      ""qty"": ""1"",
+      ""unit_price"": 85.5,
+      ""amount"": 85.5
+    }
+  ],
+  ""subtotal"": 171.0,
+  ""tax"": null,
+  ""total"": 171.0
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'SALMON PESTO', 'qty': 1.0, 'unit_price': 85.5, 'amount': 85.5}, {'name': 'SALMON PESTO', 'qty': 1.0, 'unit_price': 85.5, 'amount': 85.5}], 'subtotal': None, 'tax': None, 'total': None}"

@@ -1,0 +1,13 @@
+{
+  "MODEL_BACKEND": "qwen",
+  "MODEL_ID": "Qwen/Qwen2.5-VL-3B-Instruct",
+  "ADAPTER_PATH": "/root/.cache/huggingface/hub/models--Mahesh-Nallada--vlm-receipt-extraction-lora/snapshots/e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92",
+  "ADAPTER_REVISION": "e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92",
+  "QUEUE_DEPTH": "8",
+  "QUEUE_TIMEOUT_S": "60",
+  "INFERENCE_TIMEOUT_S": "120",
+  "REDIS_URL": "",
+  "LOGFIRE_SEND_TO_LOGFIRE": "false",
+  "LOGFIRE_TOKEN": "",
+  "HF_HOME": "/kaggle/working/hf-cache"
+}

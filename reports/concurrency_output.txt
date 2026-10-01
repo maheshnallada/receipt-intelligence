@@ -1,0 +1,6 @@
+request 1 status=503 cache=- queue_wait_ms=- inference_ms=- elapsed_ms=60030.3
+request 2 status=200 cache=MISS queue_wait_ms=0.0 inference_ms=24756.7 elapsed_ms=24791.6
+request 3 status=503 cache=- queue_wait_ms=- inference_ms=- elapsed_ms=60028.5
+request 4 status=200 cache=MISS queue_wait_ms=24756.3 inference_ms=24735.3 elapsed_ms=49527.2
+request 5 status=200 cache=MISS queue_wait_ms=49490.9 inference_ms=24728.6 elapsed_ms=74235.1
+SUMMARY statuses=503,200,503,200,200 max_active_requests=5

@@ -1,0 +1,9 @@
+receipt_id,gold_items,before_items,after_items,missing_names_before,missing_names_after,extra_names_before,extra_names_after,fields_removed_by_grounding,exact_before,exact_after
+0,1,1,1,[],[],[],[],3,False,False
+1,3,2,2,['J.STB PROMO'],['J.STB PROMO'],[],[],3,False,False
+2,2,2,2,[],[],[],[],2,False,False
+3,1,1,1,[],[],[],[],2,True,True
+4,3,0,0,"['ICE BLACKCOFFE', 'AVOCADO COFFEE', 'CHIKEN KATSU FF']","['ICE BLACKCOFFE', 'AVOCADO COFFEE', 'CHIKEN KATSU FF']",[],[],0,False,False
+5,1,1,1,['TRAD KY TOAST CARTE'],['TRAD KY TOAST CARTE'],['ITEMS 1.00'],['ITEMS 1.00'],0,False,False
+6,3,3,2,[],['CHOCO CUS ARD PASTRY'],[],[],4,False,False
+7,2,1,1,['Kupon 15'],['Kupon 15'],[],[],0,False,False

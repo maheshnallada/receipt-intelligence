@@ -1,0 +1,215 @@
+stage,receipt_id,actual,ground_truth,raw_predicted,pred
+zero-shot,0,"901016
+-TICKET CP
+2
+60.000
+60.000
+TOTAL DISC $ -60.000
+TAX 5.455
+Subtotal 60.000
+TOTAL 60.000
+(Qty 2.00
+EDC CIMB NIAGA No: xx7730 60.000","{'line_items': [{'name': '-TICKET CP', 'qty': 2.0, 'amount': 60.0}], 'subtotal': 60.0, 'tax': 5.455, 'total': 60.0}","```json
+{
+  ""store_name"": ""B. B"",
+  ""date"": ""2016-09-01"",
+  ""line_items"": [
+    {
+      ""name"": ""TICKET CP"",
+      ""qty"": ""2"",
+      ""unit_price"": 30,
+      ""amount"": 60
+    }
+  ],
+  ""subtotal"": 60,
+  ""tax"": 5.45,
+  ""total"": 60
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'TICKET CP', 'qty': 2.0, 'unit_price': 30.0, 'amount': 60.0}], 'subtotal': 60.0, 'tax': None, 'total': 60.0}"
+zero-shot,1,"J.STB PROMO
+17500
+Y.B.BAT
+46000
+Y.BASO PROM
+27500
+TOTAL 91000
+CASH 91000","{'line_items': [{'name': 'J.STB PROMO', 'amount': 17500.0}, {'name': 'Y.B.BAT', 'amount': 46000.0}, {'name': 'Y.BASO PROM', 'amount': 27500.0}], 'total': 91000.0}","```json
+{
+    ""store_name"": ""J.STB PROMO"",
+    ""date"": ""2023-01-01"",
+    ""line_items"": [
+        {
+            ""name"": ""Y.B.BAT"",
+            ""qty"": ""1"",
+            ""unit_price"": 46000,
+            ""amount"": 46000
+        },
+        {
+            ""name"": ""Y.BASO PROM"",
+            ""qty"": ""1"",
+            ""unit_price"": 27500,
+            ""amount"": 27500
+        }
+    ],
+    ""subtotal"": 91000,
+    ""tax"": null,
+    ""total"": 91000
+}
+```","{'store_name': 'J.STB PROMO', 'date': None, 'line_items': [{'name': 'Y.B.BAT', 'qty': None, 'unit_price': 46000.0, 'amount': 46000.0}, {'name': 'Y.BASO PROM', 'qty': None, 'unit_price': 27500.0, 'amount': 27500.0}], 'subtotal': 91000.0, 'tax': None, 'total': 91000.0}"
+zero-shot,2,"1
+JASMINE MT ( L )
+24,000
+COCONUT JELLY ( L )
+4,000
+SUB TOTAL 28,000
+TOTAL SAI S 28,000
+TOTAL ITEMS 1
+CASH 100,000
+CHANGE 72,000","{'line_items': [{'name': 'JASMINE MT ( L )', 'qty': 1.0, 'amount': 24000.0}, {'name': 'COCONUT JELLY ( L )', 'amount': 4000.0}], 'subtotal': 28000.0, 'total': 28000.0}","```json
+{
+    ""store_name"": ""BINTANG"",
+    ""date"": ""2023-05-18"",
+    ""line_items"": [
+        {
+            ""name"": ""JASMINE MT (L)"",
+            ""qty"": ""1"",
+            ""unit_price"": 24000,
+            ""amount"": 24000
+        },
+        {
+            ""name"": ""COCONUT JELLY (L)"",
+            ""qty"": ""1"",
+            ""unit_price"": 4000,
+            ""amount"": 4000
+        }
+    ],
+    ""subtotal"": 28000,
+    ""tax"": null,
+    ""total"": 72000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'JASMINE MT (L)', 'qty': 1.0, 'unit_price': 24000.0, 'amount': 24000.0}, {'name': 'COCONUT JELLY (L)', 'qty': 1.0, 'unit_price': 4000.0, 'amount': 4000.0}], 'subtotal': 28000.0, 'tax': None, 'total': 72000.0}"
+zero-shot,3,"1X
+@11000
+DONAT GULA
+11,000
+1.00xITEMs
+SUBTOTAL 11,000
+TOTAL 11,000
+CASH 11,000","{'line_items': [{'name': 'DONAT GULA', 'qty': 1.0, 'unit_price': 11000.0, 'amount': 11000.0}], 'subtotal': 11000.0, 'total': 11000.0}","```json
+{
+    ""store_name"": ""Dynamic Natural"",
+    ""date"": ""2019-03-07"",
+    ""line_items"": [
+        {
+            ""name"": ""DONAT GULA"",
+            ""qty"": ""1X"",
+            ""unit_price"": 11000,
+            ""amount"": 11000
+        }
+    ],
+    ""subtotal"": 11000,
+    ""tax"": null,
+    ""total"": 11000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'DONAT GULA', 'qty': 1.0, 'unit_price': 11000.0, 'amount': 11000.0}], 'subtotal': 11000.0, 'tax': None, 'total': 11000.0}"
+zero-shot,4,"ICE BLACKCOFFE
+2
+82,000
+AVOCADO COFFEE
+1
+61,000
+CHIKEN KATSU FF
+1
+51,000
+SUB_TOTAL 194,000
+DISCOUNT 19,400
+TOTAL 174,600
+CASH 200,000
+CHANGE 25,400","{'line_items': [{'name': 'ICE BLACKCOFFE', 'qty': 2.0, 'amount': 82000.0}, {'name': 'AVOCADO COFFEE', 'qty': 1.0, 'amount': 61000.0}, {'name': 'CHIKEN KATSU FF', 'qty': 1.0, 'amount': 51000.0}], 'subtotal': 194000.0, 'total': 174600.0}",!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!,"{'store_name': None, 'date': None, 'line_items': [], 'subtotal': None, 'tax': None, 'total': None}"
+zero-shot,5,"TRAD KY TOAST CARTE
+28.182
+ITEMS 1.00
+SUBTTL 28.182
+PB-1 10% 2.818
+TOTAL 31.000
+CASH 31.000","{'line_items': [{'name': 'TRAD KY TOAST CARTE', 'amount': 28.182}], 'subtotal': 28.182, 'tax': 2.818, 'total': 31.0}","```json
+{
+  ""store_name"": ""TRAD KY TOAST CARTE"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""ITEMS 1.00"",
+      ""qty"": null,
+      ""unit_price"": null,
+      ""amount"": 28.182
+    }
+  ],
+  ""subtotal"": 28.182,
+  ""tax"": 2.818,
+  ""total"": 31.00
+}
+```","{'store_name': 'TRAD KY TOAST CARTE', 'date': None, 'line_items': [{'name': 'ITEMS 1.00', 'qty': None, 'unit_price': None, 'amount': 28.182}], 'subtotal': 28.182, 'tax': 2.818, 'total': 31.0}"
+zero-shot,6,"1
+EGG TART
+13,000
+2
+CHOCO CUS ARD PASTRY
+24,000
+1
+REDBEAN BREAD
+9,000
+TOTAL 46,000
+CASH 50,000
+CHANGE 4,000","{'line_items': [{'name': 'EGG TART', 'qty': 1.0, 'amount': 13000.0}, {'name': 'CHOCO CUS ARD PASTRY', 'qty': 2.0, 'amount': 24000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'amount': 9000.0}], 'total': 46000.0}","```json
+{
+  ""store_name"": null,
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""EGG TART"",
+      ""qty"": ""1"",
+      ""unit_price"": 13000,
+      ""amount"": 13000
+    },
+    {
+      ""name"": ""CHOCO CUSTARD PASTRY"",
+      ""qty"": ""2"",
+      ""unit_price"": 24500,
+      ""amount"": 49000
+    },
+    {
+      ""name"": ""REDBEAN BREAD"",
+      ""qty"": ""1"",
+      ""unit_price"": 9000,
+      ""amount"": 9000
+    }
+  ],
+  ""subtotal"": 46000,
+  ""tax"": null,
+  ""total"": 46000
+}
+```","{'store_name': None, 'date': None, 'line_items': [{'name': 'EGG TART', 'qty': 1.0, 'unit_price': 13000.0, 'amount': 13000.0}, {'name': 'REDBEAN BREAD', 'qty': 1.0, 'unit_price': 9000.0, 'amount': 9000.0}], 'subtotal': 46000.0, 'tax': None, 'total': 46000.0}"
+zero-shot,7,"Kupon 15
+100,000
+ADD CHICKEN BOX
+909
+Subtotal 100,909
+PB1 (10%) 10,091
+Total 111,000
+Cash Rp. 111,000","{'line_items': [{'name': 'Kupon 15', 'amount': 100.0}, {'name': 'ADD CHICKEN BOX', 'amount': 909.0}], 'subtotal': 100.909, 'tax': 10.091, 'total': 111.0}","```json
+{
+  ""store_name"": ""Kupon 15"",
+  ""date"": null,
+  ""line_items"": [
+    {
+      ""name"": ""ADD CHICKEN BOX"",
+      ""qty"": ""1"",
+      ""unit_price"": 909,
+      ""amount"": 909
+    }
+  ],
+  ""subtotal"": 100909,
+  ""tax"": 10091,
+  ""total"": 111000
+}
+```","{'store_name': 'Kupon 15', 'date': None, 'line_items': [{'name': 'ADD CHICKEN BOX', 'qty': 1.0, 'unit_price': 909.0, 'amount': 909.0}], 'subtotal': 100909.0, 'tax': 10091.0, 'total': 111000.0}"

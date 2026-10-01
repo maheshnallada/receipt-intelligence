@@ -1,0 +1,11 @@
+.venv
+.git
+ui/node_modules
+ui/dist
+**/__pycache__
+.pytest_cache
+wandb
+outputs
+hf_cache
+.env
+*.safetensors

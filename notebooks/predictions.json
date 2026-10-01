@@ -1,0 +1,93 @@
+{
+  "filename": "dmart.pdf",
+  "sha256": "99de176a65b6150ae1e03cc9da015c54adae9308296e25b82e61a2bdbd4ff927",
+  "page_count": 1,
+  "model": {
+    "base_model": "Qwen/Qwen2.5-VL-3B-Instruct",
+    "base_revision": "66285546d2b821cf421d4f5eb2576359d3770cd3",
+    "adapter": "Mahesh-Nallada/vlm-receipt-extraction-lora",
+    "adapter_revision": "e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92",
+    "gpu": "Tesla T4",
+    "quantization": "4-bit NF4; float16 compute",
+    "min_pixels": 200704,
+    "max_pixels": 790272,
+    "max_new_tokens": 1024,
+    "do_sample": false,
+    "packages": {
+      "torch": "2.10.0+cu128",
+      "transformers": "4.57.6",
+      "peft": "0.19.1",
+      "accelerate": "1.13.0",
+      "bitsandbytes": "0.50.2"
+    }
+  },
+  "prompt": "You extract receipt fields from a page image. Copy only text that is visible on the page. If a field is absent, use null. Never guess or copy a product name into store_name. Only return store_name or date when the receipt clearly shows it; use null for unknown or placeholder text. Return a single JSON object with keys store_name, date (YYYY-MM-DD), line_items (name, qty, unit_price, amount), subtotal, tax, total. qty is the printed quantity; keep it null when it is not printed. unit_price is the price for one unit; amount is the total for the line. Do not swap them. Numbers must be JSON numbers, not strings. Do not guess.",
+  "render_long_edge": 1008,
+  "grounding_applied": false,
+  "sanity_checks_applied": false,
+  "merged": false,
+  "pages": [
+    {
+      "page": 1,
+      "schema_valid": true,
+      "receipt": {
+        "store_name": "DMART BANER NEAR SADANAND HOTEL, AMAR MEGAPLEX, BANER ROAD, BANER PUNE",
+        "date": "04-12-2018",
+        "line_items": [
+          {
+            "name": "307 HEM SOH-250g",
+            "qty": 1.0,
+            "unit_price": 70.0,
+            "amount": 70.0
+          },
+          {
+            "name": "307 HEM SOH-175g",
+            "qty": 1.0,
+            "unit_price": 50.0,
+            "amount": 50.0
+          },
+          {
+            "name": "307 HEM SOH-250g",
+            "qty": 1.0,
+            "unit_price": 70.0,
+            "amount": 70.0
+          },
+          {
+            "name": "307 HEM SOH-250g",
+            "qty": 1.0,
+            "unit_price": 70.0,
+            "amount": 70.0
+          },
+          {
+            "name": "05 GOWARDHA-11t",
+            "qty": 1.0,
+            "unit_price": 460.0,
+            "amount": 460.0
+          },
+          {
+            "name": "05 BRITANNI-67g",
+            "qty": 2.0,
+            "unit_price": 18.0,
+            "amount": 36.0
+          },
+          {
+            "name": "07 EVERFRE-200g",
+            "qty": 2.0,
+            "unit_price": 44.5,
+            "amount": 89.0
+          }
+        ],
+        "subtotal": 845.0,
+        "tax": 0.0,
+        "total": 845.0
+      },
+      "repair_attempted": true,
+      "raw_outputs": [
+        "```json\n{\n  \"store_name\": \"DMART BANER NEAR SADANAND HOTEL, AMAR MEGAPLEX, BANER ROAD, BANER PUNE\",\n  \"date\": \"04/12/2018\",\n  \"line_items\": [\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": \"1\",\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"307 HEM SOH-175g\",\n      \"qty\": \"1\",\n      \"unit_price\": 50.00,\n      \"amount\": 50.00\n    },\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": \"1\",\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": \"1\",\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"05 GOWARDHA-11t\",\n      \"qty\": \"1\",\n      \"unit_price\": 460.00,\n      \"amount\": 460.00\n    },\n    {\n      \"name\": \"05 BRITANNI-67g\",\n      \"qty\": \"2\",\n      \"unit_price\": 18.00,\n      \"amount\": 36.00\n    },\n    {\n      \"name\": \"07 EVERFRE-200g\",\n      \"qty\": \"2\",\n      \"unit_price\": 44.50,\n      \"amount\": 89.00\n    }\n  ],\n  \"subtotal\": 845.00,\n  \"tax\": 0.00,\n  \"total\": 845.00\n}\n```",
+        "```json\n{\n  \"store_name\": \"DMART BANER NEAR SADANAND HOTEL, AMAR MEGAPLEX, BANER ROAD, BANER PUNE\",\n  \"date\": \"04-12-2018\",\n  \"line_items\": [\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": 1,\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"307 HEM SOH-175g\",\n      \"qty\": 1,\n      \"unit_price\": 50.00,\n      \"amount\": 50.00\n    },\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": 1,\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"307 HEM SOH-250g\",\n      \"qty\": 1,\n      \"unit_price\": 70.00,\n      \"amount\": 70.00\n    },\n    {\n      \"name\": \"05 GOWARDHA-11t\",\n      \"qty\": 1,\n      \"unit_price\": 460.00,\n      \"amount\": 460.00\n    },\n    {\n      \"name\": \"05 BRITANNI-67g\",\n      \"qty\": 2,\n      \"unit_price\": 18.00,\n      \"amount\": 36.00\n    },\n    {\n      \"name\": \"07 EVERFRE-200g\",\n      \"qty\": 2,\n      \"unit_price\": 44.50,\n      \"amount\": 89.00\n    }\n  ],\n  \"subtotal\": 845.00,\n  \"tax\": 0.00,\n  \"total\": 845.00\n}\n```"
+      ],
+      "validation_error": null,
+      "elapsed_s": 118.733
+    }
+  ]
+}

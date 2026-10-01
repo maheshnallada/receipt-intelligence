@@ -1,0 +1,48 @@
+{
+  "source": "Saved Kaggle API reports and a separately user-pasted completion capture; not live telemetry or a CORD benchmark.",
+  "api": {
+    "source": "reports/extraction_capture (1).json",
+    "version_source": "reports/version.json",
+    "backend": "qwen",
+    "model_id": "Qwen/Qwen2.5-VL-3B-Instruct",
+    "adapter_revision": "e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92",
+    "filename": "receipt_ok.pdf",
+    "status": 200,
+    "cache": "MISS",
+    "elapsed_s": 25.897,
+    "total": 13.5,
+    "verified_fields": 13
+  },
+  "runs": [
+    {
+      "id": "completion",
+      "label": "Five completions",
+      "source": "reports/concurrency_completion.txt",
+      "provenance": "User-pasted follow-up capture. A matching settings/version capture was not supplied. A 120-second queue timeout was suggested, but is not verified for this run.",
+      "queue_timeout_s": null,
+      "max_active_requests": 5,
+      "requests": [
+        {"id": 1, "status": 200, "cache": "MISS", "queue_wait_ms": 25370.5, "inference_ms": 25035.7, "elapsed_ms": 50445.8},
+        {"id": 2, "status": 200, "cache": "MISS", "queue_wait_ms": 0.0, "inference_ms": 25372.5, "elapsed_ms": 25392.9},
+        {"id": 3, "status": 200, "cache": "MISS", "queue_wait_ms": 100605.5, "inference_ms": 25364.5, "elapsed_ms": 125990.9},
+        {"id": 4, "status": 200, "cache": "MISS", "queue_wait_ms": 75620.2, "inference_ms": 24985.6, "elapsed_ms": 100644.7},
+        {"id": 5, "status": 200, "cache": "MISS", "queue_wait_ms": 50405.6, "inference_ms": 25214.9, "elapsed_ms": 75658.5}
+      ]
+    },
+    {
+      "id": "timeout",
+      "label": "60-second queue limit",
+      "source": "reports/concurrency_output.txt",
+      "provenance": "Saved timeout capture matches reports/concurrency_console.txt. The accompanying reports/run_settings.json records a 60-second queue timeout. The 503 response bodies were not captured.",
+      "queue_timeout_s": 60,
+      "max_active_requests": 5,
+      "requests": [
+        {"id": 1, "status": 503, "cache": null, "queue_wait_ms": null, "inference_ms": null, "elapsed_ms": 60030.3},
+        {"id": 2, "status": 200, "cache": "MISS", "queue_wait_ms": 0.0, "inference_ms": 24756.7, "elapsed_ms": 24791.6},
+        {"id": 3, "status": 503, "cache": null, "queue_wait_ms": null, "inference_ms": null, "elapsed_ms": 60028.5},
+        {"id": 4, "status": 200, "cache": "MISS", "queue_wait_ms": 24756.3, "inference_ms": 24735.3, "elapsed_ms": 49527.2},
+        {"id": 5, "status": 200, "cache": "MISS", "queue_wait_ms": 49490.9, "inference_ms": 24728.6, "elapsed_ms": 74235.1}
+      ]
+    }
+  ]
+}

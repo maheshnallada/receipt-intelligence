@@ -1,0 +1,39 @@
+services:
+  api:
+    build:
+      context: .
+      args:
+        BASE_IMAGE: python:3.11-slim-bookworm
+    environment:
+      MODEL_BACKEND: ${MODEL_BACKEND:-dummy}
+      MODEL_ID: ${MODEL_ID:-Qwen/Qwen2.5-VL-3B-Instruct}
+      ADAPTER_PATH: ${ADAPTER_PATH:-}
+      ADAPTER_REVISION: ${ADAPTER_REVISION:-base}
+      REDIS_URL: redis://redis:6379/0
+      LOGFIRE_TOKEN: ${LOGFIRE_TOKEN:-}
+      LOGFIRE_SEND_TO_LOGFIRE: ${LOGFIRE_SEND_TO_LOGFIRE:-}
+      CORS_ORIGINS: http://localhost:8080,http://127.0.0.1:8080
+      HF_HOME: /cache/huggingface
+      HF_TOKEN: ${HF_TOKEN:-}
+    volumes:
+      - hf_cache:/cache/huggingface
+    ports:
+      - "8000:8000"
+    depends_on:
+      - redis
+
+  ui:
+    build:
+      context: ./ui
+    ports:
+      - "8080:80"
+    depends_on:
+      - api
+
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  hf_cache:

@@ -1,0 +1,9 @@
+{
+  "note": "Official naver-clova-ix/cord-v2 split membership is frozen by running python -m training.prepare_cord. Do not reshuffle. Test ids are never used for training or prompt edits.",
+  "splits": {
+    "train": [],
+    "validation": [],
+    "test": []
+  },
+  "hash": {}
+}

@@ -1,0 +1,254 @@
+{
+  "note": "Standalone notebook. Test ids never used in training.",
+  "stages": [
+    {
+      "stage": "zero-shot",
+      "n": 32,
+      "fields": {
+        "store_name": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "exact_match": 0.0,
+          "labeled": 0,
+          "ignored_unlabeled": 32
+        },
+        "date": {
+          "precision": 0.0,
+          "recall": 0.0,
+          "f1": 0.0,
+          "exact_match": 0.0,
+          "labeled": 0,
+          "ignored_unlabeled": 32
+        },
+        "subtotal": {
+          "precision": 0.7777777777777778,
+          "recall": 0.6666666666666666,
+          "f1": 0.717948717948718,
+          "exact_match": 0.6666666666666666,
+          "labeled": 21,
+          "ignored_unlabeled": 11
+        },
+        "tax": {
+          "precision": 0.6363636363636364,
+          "recall": 0.5,
+          "f1": 0.56,
+          "exact_match": 0.5,
+          "labeled": 14,
+          "ignored_unlabeled": 18
+        },
+        "total": {
+          "precision": 0.6666666666666666,
+          "recall": 0.5806451612903226,
+          "f1": 0.6206896551724138,
+          "exact_match": 0.5806451612903226,
+          "labeled": 31,
+          "ignored_unlabeled": 1
+        },
+        "line_items": {
+          "name": {
+            "precision": 0.8428571428571429,
+            "recall": 0.7023809523809523,
+            "f1": 0.7662337662337663,
+            "exact_match": 0.6629213483146067,
+            "labeled": 89,
+            "ignored_unlabeled": 0
+          },
+          "qty": {
+            "precision": 0.9354838709677419,
+            "recall": 0.7945205479452054,
+            "f1": 0.8592592592592593,
+            "exact_match": 0.7532467532467533,
+            "labeled": 77,
+            "ignored_unlabeled": 12
+          },
+          "unit_price": {
+            "precision": 0.42857142857142855,
+            "recall": 0.375,
+            "f1": 0.39999999999999997,
+            "exact_match": 0.3,
+            "labeled": 20,
+            "ignored_unlabeled": 69
+          },
+          "amount": {
+            "precision": 0.7142857142857143,
+            "recall": 0.5555555555555556,
+            "f1": 0.6250000000000001,
+            "exact_match": 0.5232558139534884,
+            "labeled": 86,
+            "ignored_unlabeled": 3
+          }
+        }
+      },
+      "exact_match_receipt": 0.1875,
+      "json_validity": 1.0,
+      "hallucination_after_grounding": 0.0,
+      "latency_ms_per_page": {
+        "p50": 23670.27419499982,
+        "p95": 47361.569829000015
+      },
+      "peak_gpu_memory": "3.01 GiB",
+      "pre_grounding": {
+        "fields": {
+          "store_name": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "exact_match": 0.0,
+            "labeled": 0,
+            "ignored_unlabeled": 32
+          },
+          "date": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "exact_match": 0.0,
+            "labeled": 0,
+            "ignored_unlabeled": 32
+          },
+          "subtotal": {
+            "precision": 0.7,
+            "recall": 0.6666666666666666,
+            "f1": 0.6829268292682926,
+            "exact_match": 0.6666666666666666,
+            "labeled": 21,
+            "ignored_unlabeled": 11
+          },
+          "tax": {
+            "precision": 0.6153846153846154,
+            "recall": 0.5714285714285714,
+            "f1": 0.5925925925925927,
+            "exact_match": 0.5714285714285714,
+            "labeled": 14,
+            "ignored_unlabeled": 18
+          },
+          "total": {
+            "precision": 0.6,
+            "recall": 0.5806451612903226,
+            "f1": 0.5901639344262295,
+            "exact_match": 0.5806451612903226,
+            "labeled": 31,
+            "ignored_unlabeled": 1
+          },
+          "line_items": {
+            "name": {
+              "precision": 0.7662337662337663,
+              "recall": 0.7023809523809523,
+              "f1": 0.7329192546583851,
+              "exact_match": 0.6555555555555556,
+              "labeled": 90,
+              "ignored_unlabeled": 0
+            },
+            "qty": {
+              "precision": 0.9264705882352942,
+              "recall": 0.863013698630137,
+              "f1": 0.8936170212765958,
+              "exact_match": 0.8076923076923077,
+              "labeled": 78,
+              "ignored_unlabeled": 12
+            },
+            "unit_price": {
+              "precision": 0.47058823529411764,
+              "recall": 0.5,
+              "f1": 0.48484848484848486,
+              "exact_match": 0.38095238095238093,
+              "labeled": 21,
+              "ignored_unlabeled": 69
+            },
+            "amount": {
+              "precision": 0.6447368421052632,
+              "recall": 0.6049382716049383,
+              "f1": 0.6242038216560509,
+              "exact_match": 0.5632183908045977,
+              "labeled": 87,
+              "ignored_unlabeled": 3
+            }
+          }
+        },
+        "exact_match_receipt": 0.1875,
+        "hallucination_rate": 0.1435523114355231
+      },
+      "post_grounding": {
+        "fields": {
+          "store_name": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "exact_match": 0.0,
+            "labeled": 0,
+            "ignored_unlabeled": 32
+          },
+          "date": {
+            "precision": 0.0,
+            "recall": 0.0,
+            "f1": 0.0,
+            "exact_match": 0.0,
+            "labeled": 0,
+            "ignored_unlabeled": 32
+          },
+          "subtotal": {
+            "precision": 0.7777777777777778,
+            "recall": 0.6666666666666666,
+            "f1": 0.717948717948718,
+            "exact_match": 0.6666666666666666,
+            "labeled": 21,
+            "ignored_unlabeled": 11
+          },
+          "tax": {
+            "precision": 0.6363636363636364,
+            "recall": 0.5,
+            "f1": 0.56,
+            "exact_match": 0.5,
+            "labeled": 14,
+            "ignored_unlabeled": 18
+          },
+          "total": {
+            "precision": 0.6666666666666666,
+            "recall": 0.5806451612903226,
+            "f1": 0.6206896551724138,
+            "exact_match": 0.5806451612903226,
+            "labeled": 31,
+            "ignored_unlabeled": 1
+          },
+          "line_items": {
+            "name": {
+              "precision": 0.8428571428571429,
+              "recall": 0.7023809523809523,
+              "f1": 0.7662337662337663,
+              "exact_match": 0.6629213483146067,
+              "labeled": 89,
+              "ignored_unlabeled": 0
+            },
+            "qty": {
+              "precision": 0.9354838709677419,
+              "recall": 0.7945205479452054,
+              "f1": 0.8592592592592593,
+              "exact_match": 0.7532467532467533,
+              "labeled": 77,
+              "ignored_unlabeled": 12
+            },
+            "unit_price": {
+              "precision": 0.42857142857142855,
+              "recall": 0.375,
+              "f1": 0.39999999999999997,
+              "exact_match": 0.3,
+              "labeled": 20,
+              "ignored_unlabeled": 69
+            },
+            "amount": {
+              "precision": 0.7142857142857143,
+              "recall": 0.5555555555555556,
+              "f1": 0.6250000000000001,
+              "exact_match": 0.5232558139534884,
+              "labeled": 86,
+              "ignored_unlabeled": 3
+            }
+          }
+        },
+        "exact_match_receipt": 0.1875,
+        "hallucination_rate": 0.0
+      }
+    }
+  ],
+  "hardware": "T4"
+}

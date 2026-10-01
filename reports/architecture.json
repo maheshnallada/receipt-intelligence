@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": { "title": "Receipt extraction service", "locale": "en", "quality_profile": "showcase", "viewBox": [1360, 600] },
+  "components": [
+    { "id": "receipt-browser", "type": "frontend", "label": "Receipt desk", "sublabel": "React / PDF upload", "pos": [80, 40], "size": [240, 76] },
+    { "id": "extract-api", "type": "backend", "label": "FastAPI", "sublabel": "Validate and inspect PDF", "pos": [570, 40], "size": [240, 76] },
+    { "id": "receipt-cache", "type": "database", "label": "Extraction cache", "sublabel": "Redis / memory fallback", "pos": [1060, 40], "size": [240, 76] },
+    { "id": "gpu-slot", "type": "messagebus", "label": "Single-flight slot", "sublabel": "One job / bounded queue", "pos": [570, 180], "size": [240, 76] },
+    { "id": "page-renderer", "type": "backend", "label": "PyMuPDF", "sublabel": "Page images + text layer", "pos": [1060, 180], "size": [240, 76] },
+    { "id": "qwen-inference", "type": "backend", "label": "Qwen2.5-VL-3B", "sublabel": "4-bit base + LoRA", "pos": [1060, 320], "size": [240, 76] },
+    { "id": "receipt-parser", "type": "backend", "label": "Receipt parser", "sublabel": "One model repair retry", "pos": [570, 320], "size": [240, 76] },
+    { "id": "document-grounding", "type": "security", "label": "Ground each page", "sublabel": "PDF text / Tesseract OCR", "pos": [80, 320], "size": [240, 76] },
+    { "id": "receipt-merge", "type": "backend", "label": "Merge and check", "sublabel": "Re-ground + totals sanity", "pos": [80, 460], "size": [240, 76] },
+    { "id": "receipt-response", "type": "frontend", "label": "Validated JSON", "sublabel": "Values + verification flags", "pos": [570, 460], "size": [240, 76] }
+  ],
+  "connections": [
+    { "from": "receipt-browser", "to": "extract-api", "label": "POST /extract", "variant": "emphasis" },
+    { "from": "extract-api", "to": "receipt-cache", "label": "lookup", "variant": "dashed" },
+    { "from": "extract-api", "to": "gpu-slot", "label": "cache miss", "labelDy": 38 },
+    { "from": "gpu-slot", "to": "page-renderer", "label": "acquire slot" },
+    { "from": "page-renderer", "to": "qwen-inference", "label": "page images", "labelDy": 38 },
+    { "from": "qwen-inference", "to": "receipt-parser", "label": "generated JSON" },
+    { "from": "receipt-parser", "to": "document-grounding", "label": "parsed fields" },
+    { "from": "document-grounding", "to": "receipt-merge", "label": "grounded pages", "labelDy": 38 },
+    { "from": "receipt-merge", "to": "receipt-response", "label": "same response", "variant": "emphasis" }
+  ],
+  "cards": [
+    { "dot": "emerald", "title": "Conservative output", "items": ["Unsupported values become null", "Arithmetic conflicts are flagged"] },
+    { "dot": "amber", "title": "Bounded admission", "items": ["Queue full: 429; wait timeout: 503", "Model loaded once at startup"] },
+    { "dot": "cyan", "title": "Cache shortcut", "items": ["A hit returns before the GPU slot", "Checked results cached for 24 hours"] }
+  ]
+}

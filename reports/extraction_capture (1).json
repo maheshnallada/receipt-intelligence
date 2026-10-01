@@ -1,0 +1,12 @@
+{
+  "filename": "receipt_ok.pdf",
+  "status": 200,
+  "elapsed_s": 25.897,
+  "headers": {
+    "x-request-id": "c8355a0b-e876-43c5-a3bc-98455293f1d5",
+    "x-cache": "MISS",
+    "x-queue-wait-ms": "0.0",
+    "x-inference-ms": "25756.3"
+  },
+  "body": "{\"store_name\":\"Oak & Ember Cafe\",\"date\":\"2026-03-15\",\"line_items\":[{\"name\":\"Latte\",\"qty\":2.0,\"unit_price\":4.5,\"amount\":9.0},{\"name\":\"Croissant\",\"qty\":1.0,\"unit_price\":3.5,\"amount\":3.5}],\"subtotal\":12.5,\"tax\":1.0,\"total\":13.5,\"_verification\":{\"store_name\":\"verified\",\"date\":\"verified\",\"line_items.0.name\":\"verified\",\"line_items.0.qty\":\"verified\",\"line_items.0.unit_price\":\"verified\",\"line_items.0.amount\":\"verified\",\"line_items.1.name\":\"verified\",\"line_items.1.qty\":\"verified\",\"line_items.1.unit_price\":\"verified\",\"line_items.1.amount\":\"verified\",\"subtotal\":\"verified\",\"tax\":\"verified\",\"total\":\"verified\"}}"
+}
