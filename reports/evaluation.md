@@ -14,6 +14,12 @@ The final standalone notebook evaluates the same frozen CORD test slice
 used for training. Both stages use the same prompt, grounding, sanity checks,
 and receipt ids `0` through `31`.
 
+Training provenance remains unresolved: the surviving notebook's CORD training
+capture records non-finite losses and no recoverable finite checkpoint. The
+saved comparison below is historical evaluation evidence, not proof that this
+training attempt produced the published adapter. A successful training log and
+matching adapter revision are needed to establish that connection.
+
 | Field | Zero-shot F1 | Fine-tuned F1 | Delta F1 |
 |---|---:|---:|---:|
 | store_name | 0.000 | 0.000 | 0.000 |
@@ -40,7 +46,7 @@ CORD does not label `store_name` or `date`; their F1 remains 0.000 and the exact
 ## Uploaded PDF inference smoke test (Kaggle)
 
 Saved evidence: [final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb),
-Cells 59-61. This is a real-model run, separate from the frozen CORD
+in "Predict your own PDF on Kaggle". This is a real-model run, separate from the frozen CORD
 comparison above.
 
 | Observation | Saved result |
@@ -79,7 +85,7 @@ checkpoint used in the earlier CORD comparison.
 ## Real-model FastAPI smoke test (Kaggle)
 
 Saved evidence: [final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb),
-Cells 69-73, [version.json](version.json), [run_settings.json](run_settings.json),
+in "Minimal Kaggle API validation", [version.json](version.json), [run_settings.json](run_settings.json),
 [extraction_capture (1).json](extraction_capture%20%281%29.json), and [receipt.json](receipt.json).
 The notebook retains an earlier 31.619-second response; the current standalone
 response capture below records 25.897 seconds. These are distinct observations.
@@ -111,7 +117,7 @@ these results are not pooled into the CORD comparison.
 [concurrency_output.txt](concurrency_output.txt) and
 [concurrency_console.txt](concurrency_console.txt) now contain the matching
 follow-up timeout run, not the older all-zero-wait run embedded in notebook
-Cell 75. With the accompanying settings recording a 60-second queue limit,
+in "Capture concurrent requests". With the accompanying settings recording a 60-second queue limit,
 requests 2, 4, and 5 returned 200/MISS after queue waits of 0.00, 24.76, and
 49.49 seconds. Requests 1 and 3 returned 503 at about 60.03 seconds, consistent
 with queue-timeout load shedding; their response bodies were not captured.

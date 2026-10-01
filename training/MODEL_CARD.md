@@ -38,11 +38,11 @@ This repo is **the adapter only**. Load it on the base 3B instruct checkpoint. I
 
 Not intended as a standalone production OCR product. Do not use for KYC, tax filing, or any decision that needs audited store/date without a second source.
 
-## What this adapter learned
+## Training target
 
-Trained on official [CORD v2](https://huggingface.co/datasets/naver-clova-ix/cord-v2) **train** images mapped to the schema above.
+The training pipeline maps official [CORD v2](https://huggingface.co/datasets/naver-clova-ix/cord-v2) **train** images to the schema above. The surviving training capture does not establish the provenance of the published adapter; see the training notes below.
 
-CORD **does not label store name or date**. Those training targets are `null`. The adapter therefore learns to leave them null on CORD-like receipts. For live store/date you need other data (or keep the zero-shot base and only trust grounded text).
+CORD **does not label store name or date**. Those training targets are `null`, so this dataset does not supervise extraction of those fields. For live store/date you need other data (or keep the zero-shot base and only trust grounded text).
 
 Ignored CORD fields: voided lines, cash/change, service charge, discounts.
 
@@ -92,21 +92,30 @@ Greedy decode. Ground the JSON against OCR/page text before you trust a field.
 
 ## Training
 
+The table describes the configuration in the surviving notebook, not a verified
+record of the run that produced the published adapter. Defaults may differ from
+the settings used for saved historical outputs.
+
 | | |
 |---|---|
 | Base | `Qwen/Qwen2.5-VL-3B-Instruct` (Unsloth 4-bit load: `unsloth/Qwen2.5-VL-3B-Instruct-bnb-4bit`) |
 | Method | QLoRA 4-bit NF4, language / attention / MLP only (`finetune_vision_layers=False`) |
 | LoRA | r=16, α=32, dropout=0 |
 | Data | CORD v2 official train, 200-image T4 smoke run (`MAX_TRAIN=200`). Test ids never used. |
-| Image budget | Training images resized to ≤512 vision tokens (`512×28×28` px). Inference long-edge 1008. |
+| Image budget | Training default: up to 768 vision tokens (`768×28×28` px). Evaluation budget: up to 1008 vision tokens; standalone PDF rendering uses a 1008-pixel long edge. |
 | Sequence | `max_seq_length=3072` on model + collator + `SFTConfig` (same value). Completions that still overflow are dropped, not truncated. |
 | Optim | AdamW (torch), lr=`1e-5` default, cosine, warmup ~20% of steps, grad clip 1.0, accum 8, batch 1, 1 epoch |
-| Hardware | NVIDIA Tesla T4 16 GB (Colab). Peak eval ~6.6 GiB (4-bit). Free the eval model before training. |
+| Hardware | NVIDIA Tesla T4 16 GB (saved Kaggle run). The CORD comparison reports 1.24 GiB peak GPU memory. Free the eval model before training. |
 | Framework | Unsloth `FastVisionModel` + `UnslothVisionDataCollator` (`completion_only_loss=True`), TRL `SFTTrainer`, PEFT |
 
 Do not “fix truncation” by setting `max_length=8192` on a T4. Qwen2.5-VL spends `pixels/(28×28)` tokens on the image first; shrink training pixels, then keep one shared sequence budget.
 
-This run’s loss fell 3.66 → 0.20 over 18 steps, then hit fp16 NaN. Later steps were discarded; the published adapter is the last **finite** checkpoint, not a clean end-of-epoch dump. Treat metrics as a directional smoke test.
+The surviving CORD training capture records non-finite losses, a last finite
+logged step of 3, and no finite checkpoint available for recovery. It does not
+verify that the published adapter came from a successful or recovered training
+run. A clean training log and matching adapter revision are required to resolve
+this provenance gap. Treat the saved comparison as historical, exploratory
+evidence rather than proof of successful training in this capture.
 
 ## Evaluation
 
@@ -151,7 +160,7 @@ presented as a demonstrated adapter improvement.
 ## Uploaded PDF inference evidence
 
 The saved Kaggle run in
-[final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), Cells 59-61,
+[final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), in "Predict your own PDF on Kaggle",
 loads the official Qwen base and this Hub adapter on a Tesla T4. Its recorded
 adapter revision is `e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92`.
 
@@ -196,7 +205,7 @@ Public hosting, Docker, and the local UI's real-model path remain unvalidated.
 - Indonesian-heavy CORD training receipts; one additional uploaded DMart PDF has a qualitative inference result, not a systematic cross-layout, currency, or language evaluation.
 - 200-sample / 1-epoch smoke train, not the full 800-image official train split.
 - The comparison uses only 32 CORD test receipts and is not a production-scale benchmark.
-- Vision encoder is frozen. Small print at train resolution (512 vision tokens) is weaker than 1008-long-edge inference.
+- Vision encoder is frozen. The default 768-token training image budget can lose small-print detail relative to the 1008-token evaluation budget.
 - Adapter can overwrite useful base-model money extraction. Prefer the base for tax/total if you only need those fields.
 - Numbers must still pass grounding (`±0.05`) and arithmetic sanity in the service layer.
 

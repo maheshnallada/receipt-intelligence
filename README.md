@@ -97,16 +97,20 @@ docker compose up --build
 UI at http://localhost:8080, API at http://localhost:8000. `/ready` is 200
 only after the backend is loaded.
 
-Colab training: open `notebooks/01_train_and_eval.ipynb` on a T4, or
-`python training/train_qlora.py`. For a **single file** you can upload
-alone (no repo imports), use `notebooks/03_full_pipeline.ipynb`. Push
-the adapter with
+Training: open [the standalone notebook](notebooks/final-notebook-vlm.ipynb)
+on a T4 and follow its training/evaluation workflow, or run
+`python training/train_qlora.py`. The notebook also includes separate PDF
+inference and API-validation workflows; do not run all workflows in one session.
+Push the adapter with
 `HF_PUSH=1 HF_ADAPTER_REPO=your-username/vlm-receipt-extraction-lora`.
 
 Published adapter: [Mahesh-Nallada/vlm-receipt-extraction-lora](https://huggingface.co/Mahesh-Nallada/vlm-receipt-extraction-lora).
-The captured T4 run used 200 training examples and restored checkpoint 15
-after non-finite losses. A same-test-set comparison on 32 CORD receipts is
-available in the evaluation and feasibility reports.
+The surviving notebook's CORD training capture used 200 examples and recorded
+non-finite losses with no finite checkpoint available for recovery. It does not
+establish a successful training run or the provenance of the published adapter.
+A saved same-test-set comparison on 32 CORD receipts is available in the
+evaluation and feasibility reports; it must not be treated as proof that this
+failed training run produced a valid adapter.
 Future notebook and script runs default to `TRAIN_LR=1e-5`; set `TRAIN_LR`
 or pass `--learning-rate` to override. This conservative setting is not yet
 validated on T4.
@@ -117,7 +121,8 @@ selected separately with `MODEL_ID=Qwen/Qwen2.5-VL-3B-Instruct`.
 
 ## Uploaded PDF: real-model Kaggle evidence
 
-[final-notebook-vlm.ipynb](notebooks/final-notebook-vlm.ipynb), Cells 59-61,
+[final-notebook-vlm.ipynb](notebooks/final-notebook-vlm.ipynb), in the
+"Predict your own PDF on Kaggle" section,
 contains a saved Tesla T4 run using the published Hub adapter at revision
 `e9d1eb7ff9a11273a87a5d27a9fec7ba35b4ee92`. On a one-page `dmart.pdf`, it
 returned seven line items and a predicted total of 845.00. The notebook's
@@ -149,7 +154,8 @@ adapter. The current [response capture](reports/extraction_capture%20%281%29.jso
 records HTTP 200, cache MISS, and **25.897 seconds** for the synthetic
 `receipt_ok.pdf`: total 13.50 and 13 verified field statuses. Schema, checked
 sample text, and arithmetic agree. The earlier 31.619-second response remains
-in [the notebook](notebooks/final-notebook-vlm.ipynb), Cells 69-73. A text-layer
+in [the notebook](notebooks/final-notebook-vlm.ipynb), in the "Minimal Kaggle API
+validation" section. A text-layer
 synthetic receipt does not validate scanned-document OCR or general accuracy.
 
 - [Timeout capture](reports/concurrency_output.txt): three 200/MISS responses
@@ -238,9 +244,10 @@ from the live backend. It is not a readiness check. Displayed service limits are
 configuration defaults, not live telemetry. The landing image is rendered from
 the project's synthetic sample PDF.
 
-Evaluation downloads in `ui/public/evidence/` are unchanged snapshots of
-`notebooks/full_comparison_pipeline.json` and `notebooks/sroie_header_metrics.json`.
-Refresh those copies when publishing new evaluation runs. The UI reads its
+Evaluation downloads are preserved snapshots:
+[CORD comparison](ui/public/evidence/full_comparison_pipeline.json) and
+[SROIE header probe](ui/public/evidence/sroie_header_metrics.json).
+Refresh those snapshots when publishing new evaluation runs. The UI reads its
 comparison and cost inputs from the CORD snapshot; it does not run evaluation
 or load model weights in the browser.
 
@@ -286,7 +293,7 @@ PDFs, the CORD dump, or LoRA weights.
 ## Limitations
 
 - Notebook VLM metrics are a 32-example T4 slice, not a stable production estimate.
-- The captured training run had non-finite loss after step 18 and restored checkpoint 15.
+- The surviving CORD training capture has non-finite loss and no recoverable finite checkpoint; a successful training run and adapter provenance still need to be documented.
 - CORD has no store/date labels, so those fields are weak on the official test set.
 - No deskew, no constrained decoding, no vision-encoder LoRA (T4 headroom).
 - PyMuPDF is AGPL. The public GitHub repo is compatible; a closed-source

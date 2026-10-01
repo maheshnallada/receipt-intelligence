@@ -57,14 +57,14 @@ historical notebook evidence. No new GPU execution was performed locally.
 - Completion-run timeout remains unknown in the snapshot; the saved 60-second
   settings are associated only with the timeout run. Live backend status is
   separate from these saved observations.
-- CORD and SROIE public snapshots remain byte-identical to their notebook
-  sources. No benchmark or cost-model inputs changed.
+- CORD and SROIE public snapshots were checked against their notebook
+  sources during validation. No benchmark or cost-model inputs changed.
 
-## Diagram delivery receipt
+## Architecture validation
 
 ```text
 diagram_type: architecture
-output: /Users/uma.maheswara/AgenticAI/FineTuning_VLM/ui/public/architecture.html
+output: ui/public/architecture.html
 specification_sha256: 550fd7c2eff0fe8d46fe972f6e4ca5975938c6fee48cd66213e941c9fc45fd65
 artifact_sha256: 94d921f88685b6898fe18946ab80f849b85da991cebdd292e105b2272b77c442
 validation: 9/9 showcase, 0 errors, 0 warnings
@@ -79,5 +79,3 @@ browser receipt are under [architecture-validation](architecture-validation/).
 Deterministic validation, automated browser evidence, and screenshot review
 are separate checks. The earlier tall candidate failed desktop containment;
 the accepted landscape candidate replaces it.
-
-Archify reported version 3.0.1 available; the installed skill was not updated.

@@ -1,5 +1,5 @@
 {
-  "source": "Saved Kaggle API reports and a separately user-pasted completion capture; not live telemetry or a CORD benchmark.",
+  "source": "Saved Kaggle API reports and a separate recorded completion capture; not live telemetry or a CORD benchmark.",
   "api": {
     "source": "reports/extraction_capture (1).json",
     "version_source": "reports/version.json",
@@ -18,7 +18,7 @@
       "id": "completion",
       "label": "Five completions",
       "source": "reports/concurrency_completion.txt",
-      "provenance": "User-pasted follow-up capture. A matching settings/version capture was not supplied. A 120-second queue timeout was suggested, but is not verified for this run.",
+      "provenance": "Recorded follow-up capture. Matching settings/version metadata was not captured. A 120-second queue timeout was suggested, but is not verified for this run.",
       "queue_timeout_s": null,
       "max_active_requests": 5,
       "requests": [

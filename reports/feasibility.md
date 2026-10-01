@@ -5,16 +5,21 @@
 [Weights & Biases experiment report](https://forge.coreweave.com/wandb/maheshnallada/vlm-receipt-extraction/reports/Receipt-Intelligence--VmlldzoxODAzNzk0OA)
 (may require sign-in or permission from the report owner).
 
-[full_comparison_pipeline.json](../notebooks/full_comparison_pipeline.json).
+[full_comparison_pipeline.json](../ui/public/evidence/full_comparison_pipeline.json).
 The latest uploaded-PDF inference evidence is in
-[final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), Cells 59-61;
-Cells 69-75 also record real-model FastAPI execution and concurrent requests.
+[final-notebook-vlm.ipynb](../notebooks/final-notebook-vlm.ipynb), in "Predict your
+own PDF on Kaggle"; "Minimal Kaggle API validation" also records real-model
+FastAPI execution and concurrent requests.
 The API response and runtime identity are saved in
 [extraction_capture (1).json](extraction_capture%20%281%29.json) and [version.json](version.json).
 The adapter is published at
 [Mahesh-Nallada/vlm-receipt-extraction-lora](https://huggingface.co/Mahesh-Nallada/vlm-receipt-extraction-lora).
 The current artifact contains a clean same-test-set comparison on 32 CORD
 receipts plus a separate SROIE header probe.
+
+The surviving CORD training capture has non-finite losses and no recoverable
+finite checkpoint. The saved comparison and published adapter are not linked
+to a verified successful training run by the available evidence.
 
 ## Is a 3B VLM a good fit?
 
